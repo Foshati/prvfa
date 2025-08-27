@@ -73,7 +73,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       priceMin: 5,
       priceMax: 10,
       price: 7.5,
-      application: "مصارف خانگی سبک غیر حساس — قسمت‌های آبیاری باغ و باغچه",
+      application: "مصارف خانگی سبک غیر حساس  قسمت‌های آبیاری باغ و باغچه",
       color: "#FF6B6B",
     },
     {
@@ -92,7 +92,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       priceMin: 10,
       priceMax: 20,
       price: 15,
-      application: "خانگی، نیمه‌تجاری، مزارع",
+      application: "خانگی، خطوط انتقال اصلی اب، مزارع، کشاورزی",
       color: "#4ECDC4",
     },
     {
@@ -160,7 +160,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       material: "PVC-U + EPDM",
       maxPressure: 218,
       maxPressureBar: 15,
-      maxPressureRange: "-۱۰ / ۲۱۸-۱۵۰ ۱۵",
+      maxPressureRange: "۱۰-۱۵ / ۲۱۸-۱۵۰ ",
       outputPressure: "قابل تنظیم",
       efficiencyMin: 50,
       efficiencyMax: 60,
@@ -538,9 +538,9 @@ const PRVAnalysisDashboard: React.FC = () => {
                 <th className="px-3 py-3 text-center">
                   حداکثر فشار ورودی (psi / bar)
                 </th>
-                <th className="px-3 py-3 text-center">فشار خروجی</th>
+                <th className="px-3 py-3 text-center">فشار خروجی (روش تنظیم)</th>
                 <th className="px-3 py-3 text-center">راندمان کاهش فشار (%)</th>
-                <th className="px-3 py-3 text-center">انحراف / پایداری</th>
+                <th className="px-3 py-3 text-center">انحراف معیار (پایداری)</th>
                 <th className="px-3 py-3 text-center">قیمت تقریبی (USD)</th>
                 <th className="px-3 py-3 text-center">
                   محدوده عملکرد + سطح کاربرد
