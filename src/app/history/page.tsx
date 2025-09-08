@@ -51,8 +51,8 @@ export default function HistoryPage() {
             <thead className="bg-gray-800 text-white">
               <tr>
                 <th className="px-4 py-4 text-center font-medium">دوران زمانی</th>
-                <th className="px-4 py-4 text-center font-medium">الگوریتم‌ها و تحولات اصلی</th>
-                <th className="px-4 py-4 text-center font-medium">ویژگی‌ها و کاربردها</th>
+                <th className="px-4 py-4 text-center font-medium">تحولات اصلی</th>
+                <th className="px-4 py-4 text-center font-medium">ویژگی‌ها  </th>
               </tr>
             </thead>
             <tbody>

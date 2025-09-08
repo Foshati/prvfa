@@ -101,26 +101,47 @@ const ValveAnalysis: React.FC = () => {
     const efficiencyCtx = efficiencyChartRef.current?.getContext("2d");
 
     if (efficiencyCtx) {
+      // Create hatched pattern for blue bars
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 10;
+      canvas.height = 10;
+      if (ctx) {
+        ctx.fillStyle = 'rgba(52, 152, 219, 0.8)';
+        ctx.fillRect(0, 0, 10, 10);
+        ctx.strokeStyle = 'rgba(41, 128, 185, 1)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(10, 10);
+        ctx.moveTo(0, 5);
+        ctx.lineTo(10, 15);
+        ctx.moveTo(-5, 0);
+        ctx.lineTo(5, 10);
+        ctx.stroke();
+      }
+      const hatchedPattern = efficiencyCtx.createPattern(canvas, 'repeat');
       const efficiencyConfig: ChartConfiguration = {
         type: "bar",
         data: {
           labels: ["آزمایش 1", "آزمایش 2", "آزمایش 3", "آزمایش 4"],
           datasets: [
             {
-              label: "شیر فشارشکن پلیمری ساده",
+              label: "شیر فشار شکن ساده مدل دوم",
               data: simpleProcessed.map((item) => parseFloat(item.efficiency)),
               backgroundColor: "rgba(46, 204, 113, 0.8)",
               borderColor: "rgba(39, 174, 96, 1)",
               borderWidth: 2,
             },
             {
-              label: "شیر فشارشکن پلیمری پیشرفته",
+              label: "شیر فشار شکن پیشرفته مدل دوم",
               data: advancedProcessed.map((item) =>
                 parseFloat(item.efficiency)
               ),
-              backgroundColor: "rgba(52, 152, 219, 0.8)",
+              backgroundColor: hatchedPattern || "rgba(52, 152, 219, 0.8)",
               borderColor: "rgba(41, 128, 185, 1)",
               borderWidth: 2,
+              borderDash: [5, 5],
             },
           ],
         },
@@ -130,10 +151,10 @@ const ValveAnalysis: React.FC = () => {
             title: {
               display: true,
               text: "مقایسه نسبت کاهش فشار (راندمان کنترل فشار)",
-              font: { size: 16, family: "Tahoma" },
+              font: { size: 16, family: "B-NAZANIN" },
             },
             legend: {
-              labels: { font: { family: "Tahoma" } },
+              labels: { font: { family: "B-NAZANIN", size: 16 } },
             },
           },
           scales: {
@@ -142,14 +163,14 @@ const ValveAnalysis: React.FC = () => {
               title: {
                 display: true,
                 text: "نسبت کاهش فشار (%)",
-                font: { family: "Tahoma" },
+                font: { family: "B-NAZANIN" },
               },
             },
             x: {
               title: {
                 display: true,
                 text: "شماره آزمایش",
-                font: { family: "Tahoma" },
+                font: { family: "B-NAZANIN" },
               },
             },
           },
@@ -172,7 +193,7 @@ const ValveAnalysis: React.FC = () => {
           labels: ["آزمایش 1", "آزمایش 2", "آزمایش 3", "آزمایش 4"],
           datasets: [
             {
-              label: "شیر فشارشکن پلیمری ساده",
+              label: "شیر فشار شکن ساده مدل دوم",
               data: simpleProcessed.map((item) => item.pressureDrop),
               backgroundColor: "rgba(46, 204, 113, 0.3)",
               borderColor: "rgba(39, 174, 96, 1)",
@@ -181,11 +202,12 @@ const ValveAnalysis: React.FC = () => {
               tension: 0.4,
             },
             {
-              label: "شیر فشارشکن پلیمری پیشرفته",
+              label: "شیر فشار شکن پیشرفته مدل دوم",
               data: advancedProcessed.map((item) => item.pressureDrop),
               backgroundColor: "rgba(52, 152, 219, 0.3)",
               borderColor: "rgba(41, 128, 185, 1)",
               borderWidth: 3,
+              borderDash: [10, 5],
               fill: true,
               tension: 0.4,
             },
@@ -197,10 +219,10 @@ const ValveAnalysis: React.FC = () => {
             title: {
               display: true,
               text: "مقایسه افت فشار",
-              font: { size: 16, family: "Tahoma" },
+              font: { size: 16, family: "B-NAZANIN" },
             },
             legend: {
-              labels: { font: { family: "Tahoma" } },
+              labels: { font: { family: "B-NAZANIN", size: 16 } },
             },
           },
           scales: {
@@ -209,14 +231,14 @@ const ValveAnalysis: React.FC = () => {
               title: {
                 display: true,
                 text: "افت فشار (psi)",
-                font: { family: "Tahoma" },
+                font: { family: "B-NAZANIN" },
               },
             },
             x: {
               title: {
                 display: true,
                 text: "شماره آزمایش",
-                font: { family: "Tahoma" },
+                font: { family: "B-NAZANIN" },
               },
             },
           },
@@ -283,7 +305,7 @@ const ValveAnalysis: React.FC = () => {
   return (
     <div
       dir="rtl"
-      className="font-['Tahoma',Arial,sans-serif] m-5 bg-gray-100 min-h-screen"
+      className="font-['B-NAZANIN','Tahoma',Arial,sans-serif] m-5 bg-gray-100 min-h-screen"
     >
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h1 className="text-center text-slate-700 mb-8 border-b-4 border-blue-500 pb-3 text-2xl font-bold">
