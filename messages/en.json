@@ -1,0 +1,16 @@
+{
+  "Header": {
+    "introduction": "Introduction",
+    "literature": "Literature Review",
+    "methodology": "Methodology",
+    "results": "Results",
+    "conclusion": "Conclusion"
+  },
+  "HomePage": {
+    "title": "Modern Solutions for Customer Engagement",
+    "description": "Highly customizable components for building modern websites and applications that look and feel the way you mean it.",
+    "startBuilding": "Start Building",
+    "requestDemo": "Request a demo",
+    "aiModels": "Introducing Support for AI Models"
+  }
+}
