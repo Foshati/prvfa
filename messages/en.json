@@ -12,5 +12,51 @@
     "startBuilding": "Start Building",
     "requestDemo": "Request a demo",
     "aiModels": "Introducing Support for AI Models"
+  },
+  "Team": {
+    "professors": "Faculty Members",
+    "researchers": "Researchers",
+    "supervisor": "Supervisor",
+    "advisor": "Advisor",
+    "referee": "Referee",
+    "thesisAuthor": "Thesis Author\n(Designer & Manufacturer of Pressure-Reducing Valve)",
+    "researcher": "Researcher",
+    "labAssistant": "Laboratory Assistant",
+    "labConsultant": "Laboratory Consultant",
+    "equipmentConsultant": "Equipment Procurement Consultant",
+    "names": {
+      "baghlani": "Dr. Abdolhossein Baghlani",
+      "daneshvar": "Dr. Farnoush Aghaee Daneshvar",
+      "hekmatzadeh": "Dr. Ali Akbar Hekmatzadeh",
+      "amirrezaFoshati": "Eng. Amirreza Foshati",
+      "amirhosseinFoshati": "Eng. AmirHossein Foshati",
+      "aliSehat": "Eng. Ali Sehat",
+      "mehdiAhmadi": "Eng. Mehdi Ahmadi"
+    }
+  },
+  "Features": {
+    "title": "Professional Design of Multi-Stage Polymer Pressure-Reducing Valve",
+    "subtitle": "With new direct-cover mechanism design",
+    "highEfficiency": {
+      "title": "High Efficiency & Adjustable",
+      "description": "Reduces pressure by 40-70% on average with adjustable settings"
+    },
+    "lightWeight": {
+      "title": "Lightweight",
+      "description": "Up to 60% lighter than metal models"
+    },
+    "affordable": {
+      "title": "Cost-Effective",
+      "description": "Install a pressure-reducing valve at every main water inlet of buildings and farms for less than $50"
+    },
+    "easyInstall": {
+      "title": "Easy Installation",
+      "description": "Installs in minutes without tools"
+    }
+  },
+  "Hero": {
+    "university": "Shiraz University of Technology",
+    "faculty": "Department of Civil and Environmental Engineering",
+    "thesisTitle": "Design, construction and testing of a polymer pressure-reducing valve for controlling and reducing pressure in water transmission and distribution"
   }
 }

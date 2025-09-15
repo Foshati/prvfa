@@ -30,7 +30,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <body
-        className={` ${vazir.variable} antialiased font-vazir`}
+        className={` ${vazir.variable} antialiased font-vazir min-h-screen flex flex-col`}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -40,9 +40,11 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            {children}
+            <main className="flex-1 pt-20">
+              {children}
+            </main>
+            <Footer/>
           </ThemeProvider>
-          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

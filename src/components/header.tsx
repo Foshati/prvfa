@@ -47,27 +47,27 @@ export const Header = () => {
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
                             <ul className="flex gap-8 text-sm">
                                 <li>
-                                    <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/introduction" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                         <span>{t('introduction')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/literature-review" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                         <span>{t('literature')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/methodology" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                         <span>{t('methodology')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/results" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                         <span>{t('results')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/recommendations" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                         <span>{t('conclusion')}</span>
                                     </Link>
                                 </li>
@@ -78,27 +78,27 @@ export const Header = () => {
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base">
                                     <li>
-                                        <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/introduction" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{t('introduction')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/literature-review" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{t('literature')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/methodology" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{t('methodology')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/results" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{t('results')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="#link" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/recommendations" className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{t('conclusion')}</span>
                                         </Link>
                                     </li>

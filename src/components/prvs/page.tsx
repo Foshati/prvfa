@@ -60,134 +60,134 @@ const PRVAnalysisDashboard: React.FC = () => {
     {
       id: 1,
       model: "PRV-SM2",
-      mechanism: "Direct Simple",
+      mechanism: "مستقیم ساده",
       material: "PVC / UPVC",
       maxPressure: 116,
       maxPressureBar: 8,
       maxPressureRange: "5-8 / 72-116",
-      outputPressure: "Pre-set (no adjustment screw)",
+      outputPressure: "از پیش تنظیم شده (بدون پیچ تنظیم)",
       efficiencyMin: 20,
       efficiencyMax: 35,
       efficiency: 27.5,
-      stabilityText: "Low & Variable Stability",
+      stabilityText: "پایداری کم و متغیر",
       priceMin: 5,
       priceMax: 10,
       price: 7.5,
-      application: "Light residential non-critical uses, garden and landscape irrigation",
+      application: "مصارف غیرحساس مسکونی سبک، آبیاری باغ و محوطه سازی",
       color: "#FF6B6B",
     },
     {
       id: 2,
       model: "PRV-AM2",
-      mechanism: "Direct Diaphragm",
+      mechanism: "دیافراگم مستقیم",
       material: "PVC / UPVC",
       maxPressure: 116,
       maxPressureBar: 8,
       maxPressureRange: "5-8 / 72-116",
-      outputPressure: "Adjustable",
+      outputPressure: "قابل تنظیم",
       efficiencyMin: 55,
       efficiencyMax: 70,
       efficiency: 62.5,
-      stabilityText: "Very Stable (<0.5 psi)",
+      stabilityText: "بسیار پایدار (<0.5 psi)",
       priceMin: 10,
       priceMax: 20,
       price: 15,
-      application: "Residential, main water transmission lines, farms, agriculture",
+      application: "مسکونی، خطوط اصلی انتقال آب، مزارع، کشاورزی",
       color: "#4ECDC4",
     },
     {
       id: 3,
-      model: "Enhanced Polymer PRV",
-      mechanism: "Direct Diaphragm",
-      material: "High Pressure UPVC",
+      model: "شیر پلیمری تقویت شده",
+      mechanism: "دیافراگم مستقیم",
+      material: "UPVC فشار قوی",
       maxPressure: 232,
       maxPressureBar: 16,
       maxPressureRange: "16 / 232",
-      outputPressure: "Adjustable",
+      outputPressure: "قابل تنظیم",
       efficiencyMin: 60,
       efficiencyMax: 75,
       efficiency: 67.5,
-      stabilityText: "Very Stable",
+      stabilityText: "بسیار پایدار",
       priceMin: 25,
       priceMax: 40,
       price: 32.5,
-      application: "Light industrial, main networks, residential, water distribution networks, farms and agriculture",
+      application: "صنعتی سبک، شبکه های اصلی، مسکونی، شبکه های توزیع آب، مزارع و کشاورزی",
       color: "#45B7D1",
     },
     {
       id: 4,
       model: "Watts LF25AUB-Z3",
-      mechanism: "Direct Diaphragm",
-      material: "Lead-free Silicon Copper Alloy",
+      mechanism: "دیافراگم مستقیم",
+      material: "آلیاژ مس سیلیکون بدون سرب",
       maxPressure: 300,
       maxPressureBar: 20.7,
       maxPressureRange: "20.7 / 300",
-      outputPressure: "Adjustable",
+      outputPressure: "قابل تنظیم",
       efficiencyMin: 45,
       efficiencyMax: 70,
       efficiency: 57.5,
-      stabilityText: "Stable",
+      stabilityText: "پایدار",
       priceMin: 150,
       priceMax: 250,
       price: 200,
-      application: "Sanitary and building water systems, heating and cooling systems",
+      application: "سیستم های آب بهداشتی و ساختمانی، سیستم های گرمایش و سرمایش",
       color: "#96CEB4",
     },
     {
       id: 5,
-      model: "Apollo™ 3610401 — 36 Series",
-      mechanism: "Direct Piston",
-      material: "Bronze",
+      model: "Apollo™ 3610401 — سری 36",
+      mechanism: "پیستون مستقیم",
+      material: "برنز",
       maxPressure: 300,
       maxPressureBar: 20.7,
       maxPressureRange: "20.7 / 300",
-      outputPressure: "Adjustable",
+      outputPressure: "قابل تنظیم",
       efficiencyMin: 40,
       efficiencyMax: 70,
       efficiency: 55,
-      stabilityText: "Stable",
+      stabilityText: "پایدار",
       priceMin: 300,
       priceMax: 400,
       price: 350,
-      application: "Industrial, municipal, main water distribution lines and building equipment protection",
+      application: "صنعتی، شهری، خطوط اصلی توزیع آب و حفاظت تجهیزات ساختمان",
       color: "#FECA57",
     },
     {
       id: 6,
       model: "GF Type 582 — 1″ PVC socket (EPDM)",
-      mechanism: "Direct Diaphragm",
+      mechanism: "دیافراگم مستقیم",
       material: "PVC-U + EPDM",
       maxPressure: 218,
       maxPressureBar: 15,
       maxPressureRange: "10-15 / 218-150",
-      outputPressure: "Adjustable",
+      outputPressure: "قابل تنظیم",
       efficiencyMin: 50,
       efficiencyMax: 60,
       efficiency: 55,
-      stabilityText: "Very Stable",
+      stabilityText: "بسیار پایدار",
       priceMin: 800,
       priceMax: 1500,
       price: 1150,
-      application: "Laboratory, light industrial, chemical processes, pure and semi-conductive water",
+      application: "آزمایشگاه، صنعتی سبک، فرآیندهای شیمیایی، آب خالص و نیمه رسانا",
       color: "#FF9FF3",
     },
     {
       id: 7,
       model: "NeoFlow PRV (GF)",
-      mechanism: "External Pilot",
-      material: "POM-C / GF Polymer Material",
+      mechanism: "راهنمای خارجی",
+      material: "POM-C / مواد پلیمری GF",
       maxPressure: 232,
       maxPressureBar: 16,
       maxPressureRange: "16 / 232",
-      outputPressure: "Adjustable (Pilot)",
+      outputPressure: "قابل تنظیم (راهنما)",
       efficiencyMin: 55,
       efficiencyMax: 70,
       efficiency: 62.5,
-      stabilityText: "Very Stable",
+      stabilityText: "بسیار پایدار",
       priceMin: 1000,
       priceMax: 2000,
       price: 1500,
-      application: "Large industrial, urban distribution networks, main water distribution lines, network pressure management",
+      application: "صنعتی بزرگ، شبکه های توزیع شهری، خطوط اصلی توزیع آب، مدیریت فشار شبکه",
       color: "#54A0FF",
     },
   ];
@@ -203,9 +203,8 @@ const PRVAnalysisDashboard: React.FC = () => {
 
   const getShortName = (fullName: string): string => {
     if (fullName.includes("PRV-SM2")) return "PRV-SM2";
-    if (fullName.includes("PRV-AM2"))
-      return "PRV-AM2";
-    if (fullName.includes("Enhanced Polymer")) return "PRV-AM2+";
+    if (fullName.includes("PRV-AM2")) return "PRV-AM2";
+    if (fullName.includes("پلیمری تقویت شده")) return "PRV-AM2+";
     if (fullName.includes("Watts")) return "Watts LF25AUB";
     if (fullName.includes("Apollo")) return "Apollo 36 Series";
     if (fullName.includes("GF Type")) return "GF Type 582";
@@ -230,7 +229,7 @@ const PRVAnalysisDashboard: React.FC = () => {
   const priceEfficiencyData: ChartData[] = prvData.map((item) => ({
     price: item.price,
     efficiency: item.efficiency,
-    name: `Model ${item.id}`,
+    name: `مدل ${item.id}`,
     fill: item.color,
   }));
 
@@ -266,7 +265,7 @@ const PRVAnalysisDashboard: React.FC = () => {
               />
               <YAxis
                 label={{
-                  value: "(%) راندمان",
+                  value: "راندمان (%)",
                   angle: -90,
                   position: "insideLeft",
                   style: {
@@ -281,7 +280,7 @@ const PRVAnalysisDashboard: React.FC = () => {
               <Tooltip
                 formatter={(value: any, name: any) => [
                   `${value}%`,
-                  "Efficiency",
+                  "راندمان",
                 ]}
                 labelFormatter={(label: any) => `${label}`}
                 contentStyle={{
@@ -320,7 +319,7 @@ const PRVAnalysisDashboard: React.FC = () => {
               />
               <YAxis
                 label={{
-                  value: "(psi) حداکثر فشار ورودی",
+                  value: "حداکثر فشار ورودی (psi)",
                   angle: -90,
                   position: "insideLeft",
                   style: {
@@ -389,7 +388,7 @@ const PRVAnalysisDashboard: React.FC = () => {
               />
               <YAxis
                 label={{
-                  value: "Max Pressure (psi)",
+                  value: "حداکثر فشار (psi)",
                   angle: -90,
                   position: "insideLeft",
                   style: {
@@ -404,7 +403,7 @@ const PRVAnalysisDashboard: React.FC = () => {
               <Tooltip
                 formatter={(value: any, name: any) => [
                   `${value} psi`,
-                  "Max Pressure",
+                  "حداکثر فشار",
                 ]}
                 labelFormatter={(label: any) => `${label}`}
                 contentStyle={{
@@ -435,7 +434,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 type="number"
                 domain={["dataMin", "dataMax"]}
                 label={{
-                  value: "Price (USD)",
+                  value: "قیمت (دلار آمریکا)",
                   position: "insideBottom",
                   offset: -10,
                   style: {
@@ -450,7 +449,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 dataKey="efficiency"
                 type="number"
                 label={{
-                  value: "Efficiency (%)",
+                  value: "راندمان (%)",
                   angle: -90,
                   position: "insideLeft",
                   style: {
@@ -465,9 +464,9 @@ const PRVAnalysisDashboard: React.FC = () => {
               <Tooltip
                 formatter={(value: any, name: any, props: any) => {
                   if (name === "efficiency")
-                    return [`${value}%`, "Efficiency"];
+                    return [`${value}%`, "راندمان"];
                   if (name === "price")
-                    return [`${value}`, "Price"];
+                    return [`${value}`, "قیمت"];
                   return [value, name];
                 }}
                 labelFormatter={() => ""}
@@ -475,15 +474,15 @@ const PRVAnalysisDashboard: React.FC = () => {
                   if (active && payload && payload.length) {
                     const data = payload[0].payload;
                     return (
-                      <div className="bg-white p-3 border rounded-lg shadow-lg">
+                      <div className="bg-white p-3 border rounded-lg shadow-lg" style={{ direction: 'rtl', fontFamily: 'Arial' }}>
                         <p className="font-semibold text-gray-800 mb-1">
                           {data.name}
                         </p>
                         <p className="text-sm text-gray-600">
-                          Efficiency: {data.efficiency}%
+                          راندمان: {data.efficiency}%
                         </p>
                         <p className="text-sm text-gray-600">
-                          Price: ${data.price}
+                          قیمت: ${data.price}
                         </p>
                       </div>
                     );
@@ -502,9 +501,9 @@ const PRVAnalysisDashboard: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-white min-h-screen font-['Arial',sans-serif]">
+    <div className="max-w-7xl mx-auto p-6 bg-white min-h-screen" style={{ direction: 'rtl', fontFamily: 'Arial' }}>
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        Pressure Reducing Valves Analysis & Comparison
+        تحلیل و مقایسه شیرهای کاهنده فشار
       </h1>
 
       {/* Main table */}
@@ -513,18 +512,18 @@ const PRVAnalysisDashboard: React.FC = () => {
           <table className="w-full text-sm">
             <thead className="bg-gray-800 text-white">
               <tr>
-                <th className="px-3 py-3 text-left">Valve Model</th>
-                <th className="px-3 py-3 text-center">Mechanism</th>
-                <th className="px-3 py-3 text-center">Body Material</th>
+                <th className="px-3 py-3 text-right">مدل شیر</th>
+                <th className="px-3 py-3 text-center">مکانیزم</th>
+                <th className="px-3 py-3 text-center">جنس بدنه</th>
                 <th className="px-3 py-3 text-center">
-                  Max Inlet Pressure (psi / bar)
+                  حداکثر فشار ورودی (psi / bar)
                 </th>
-                <th className="px-3 py-3 text-center">Output Pressure (Adjustment Method)</th>
-                <th className="px-3 py-3 text-center">Pressure Reduction Efficiency (%)</th>
-                <th className="px-3 py-3 text-center">Standard Deviation (Stability)</th>
-                <th className="px-3 py-3 text-center">Approximate Price (USD)</th>
+                <th className="px-3 py-3 text-center">فشار خروجی (روش تنظیم)</th>
+                <th className="px-3 py-3 text-center">راندمان کاهش فشار (%)</th>
+                <th className="px-3 py-3 text-center">انحراف معیار (پایداری)</th>
+                <th className="px-3 py-3 text-center">قیمت تقریبی (دلار)</th>
                 <th className="px-3 py-3 text-center">
-                  Operating Range + Application Level
+                  محدوده عملکرد + سطح کاربرد
                 </th>
               </tr>
             </thead>
@@ -537,7 +536,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                   } hover:bg-gray-100 transition-colors text-xs`}
                 >
                   <td
-                    className="px-3 py-3 border-l-4"
+                    className="px-3 py-3 border-r-4"
                     style={{ borderColor: item.color }}
                   >
                     <div className="font-medium text-gray-900">
@@ -584,7 +583,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       {/* Chart controls */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">
-          Comparative Charts
+          نمودارهای مقایسه‌ای
         </h2>
 
         <div className="flex flex-wrap gap-4 mb-6">
@@ -596,7 +595,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
           >
-            Efficiency Comparison
+            مقایسه راندمان
           </button>
           <button
             onClick={() => setSelectedChart("pressure")}
@@ -606,7 +605,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
           >
-            Max Inlet Pressure Curve
+            منحنی حداکثر فشار ورودی
           </button>
           <button
             onClick={() => setSelectedChart("pressureBar")}
@@ -616,7 +615,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
           >
-            Pressure Bar Comparison
+            مقایسه نواری فشار
           </button>
           <button
             onClick={() => setSelectedChart("comparison")}
@@ -626,7 +625,7 @@ const PRVAnalysisDashboard: React.FC = () => {
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
           >
-            Price-Efficiency Scatter Plot
+            نمودار پراکنش قیمت-راندمان
           </button>
         </div>
 
@@ -639,7 +638,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       <div className="grid md:grid-cols-3 gap-6">
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-lg font-bold mb-4 text-gray-800">
-            Highest Efficiency
+            بالاترین راندمان
           </h3>
           {prvData
             .sort((a, b) => b.efficiency - a.efficiency)
@@ -661,7 +660,7 @@ const PRVAnalysisDashboard: React.FC = () => {
 
         <div className="bg-white rounded-lg shadow-lg p-6">
           <h3 className="text-lg font-bold mb-4 text-gray-800">
-            Highest Pressure
+            بالاترین فشار
           </h3>
           {prvData
             .sort((a, b) => b.maxPressure - a.maxPressure)
@@ -682,7 +681,7 @@ const PRVAnalysisDashboard: React.FC = () => {
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-lg font-bold mb-4 text-gray-800">Best Price</h3>
+          <h3 className="text-lg font-bold mb-4 text-gray-800">بهترین قیمت</h3>
           {prvData
             .sort((a, b) => a.price - b.price)
             .slice(0, 3)
@@ -704,15 +703,15 @@ const PRVAnalysisDashboard: React.FC = () => {
 
       {/* Color guide */}
       <div className="bg-white rounded-lg shadow-lg p-6 mt-8">
-        <h3 className="text-lg font-bold mb-4 text-gray-800">Color Guide</h3>
+        <h3 className="text-lg font-bold mb-4 text-gray-800">راهنمای رنگ‌ها</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {prvData.map((item: PRVData) => (
             <div key={item.id} className="flex items-center">
               <div
-                className="w-4 h-4 rounded ml-3"
+                className="w-4 h-4 rounded mr-3"
                 style={{ backgroundColor: item.color }}
               ></div>
-              <span className="text-sm text-gray-900 font-medium">{`Model ${item.id}: ${item.model}`}</span>
+              <span className="text-sm text-gray-900 font-medium">{`مدل ${item.id}: ${item.model}`}</span>
             </div>
           ))}
         </div>

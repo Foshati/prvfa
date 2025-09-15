@@ -23,7 +23,7 @@ const GithubIcon = () => (
 
 export const Footer = () => {
   return (
-    <footer className='p-3 bg-background border-t text-center'>
+    <footer className='p-3 bg-background border-t text-center font-sans'>
       <div className='m-4 text-sm font-medium'>
         {/* Copyright Text (Hidden on Mobile) */}
         <p className='text-xs'>

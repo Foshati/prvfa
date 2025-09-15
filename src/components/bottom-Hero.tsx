@@ -1,70 +1,154 @@
-import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
+"use client";
+import { CircleDollarSign, TrendingUp, Weight, Wrench } from 'lucide-react'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { TextEffect } from '@/components/ui/textEffect'
+import { useRef } from 'react'
+import { useInView, motion } from 'framer-motion'
+
+const features = [
+    { key: 'highEfficiency', icon: TrendingUp },
+    { key: 'lightWeight', icon: Weight },
+    { key: 'affordable', icon: CircleDollarSign },
+    { key: 'easyInstall', icon: Wrench },
+]
 
 export default function BottomHero() {
-    return (
-        <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl space-y-12 px-6">
-                <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
-                    <h2 className="text-4xl font-semibold">The Lyra ecosystem brings together our models</h2>
-                    <p className="max-w-sm sm:ml-auto">Empower your team with workflows that adapt to your needs, whether you prefer git synchronization or a AI Agents interface.</p>
-                </div>
-                <div className="px-3 pt-3 md:-mx-8">
-                    <div className="aspect-88/36 mask-b-from-75% mask-b-to-95% relative">
-                        <Image
-                            src="/mail-upper.png"
-                            className="absolute inset-0 z-10"
-                            alt="payments illustration dark"
-                            width={2797}
-                            height={1137}
-                        />
-                        <Image
-                            src="/mail-back.png"
-                            className="hidden dark:block"
-                            alt="payments illustration dark"
-                            width={2797}
-                            height={1137}
-                        />
-                        <Image
-                            src="/mail-back-light.png"
-                            className="dark:hidden"
-                            alt="payments illustration light"
-                            width={2797}
-                            height={1137}
-                        />
-                    </div>
-                </div>
-                <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                            <Zap className="size-4" />
-                            <h3 className="text-sm font-medium">Faaast</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">It supports an entire helping developers and innovate.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Cpu className="size-4" />
-                            <h3 className="text-sm font-medium">Powerful</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">It supports an entire helping developers and businesses.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Lock className="size-4" />
-                            <h3 className="text-sm font-medium">Security</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">It supports an helping developers businesses innovate.</p>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                            <Sparkles className="size-4" />
+    const t = useTranslations('Features');
+    const ref = useRef(null);
+    const inView = useInView(ref, {
+        once: true,
+        margin: '-100px'
+    });
 
-                            <h3 className="text-sm font-medium">AI Powered</h3>
-                        </div>
-                        <p className="text-muted-foreground text-sm">It supports an helping developers businesses innovate.</p>
-                    </div>
+    return (
+        <section className="py-16 md:py-32 font-sans">
+            <div className="mx-auto max-w-5xl space-y-12 px-6">
+                <div ref={ref} className="text-center space-y-4">
+                    <TextEffect
+                        per='line'
+                        as='h2'
+                        className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight whitespace-nowrap overflow-hidden text-ellipsis px-4"
+                        segmentWrapperClassName='overflow-hidden block'
+                        preset={inView ? 'fade' : undefined}
+                        trigger={inView}
+                        variants={{
+                            container: {
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: { 
+                                        staggerChildren: 0.2,
+                                        delayChildren: 0
+                                    },
+                                },
+                            },
+                            item: {
+                                hidden: {
+                                    opacity: 0,
+                                    y: 40,
+                                },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.5,
+                                    },
+                                },
+                            },
+                        }}
+                    >
+                        {t('title')}
+                    </TextEffect>
+                    <TextEffect
+                        per='line'
+                        as='p'
+                        className="text-base md:text-lg text-gray-600 dark:text-gray-300 font-medium leading-relaxed italic"
+                        segmentWrapperClassName='overflow-hidden block'
+                        preset={inView ? 'fade' : undefined}
+                        trigger={inView}
+                        variants={{
+                            container: {
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: { 
+                                        staggerChildren: 0.2,
+                                        delayChildren: 0.8
+                                    },
+                                },
+                            },
+                            item: {
+                                hidden: {
+                                    opacity: 0,
+                                    y: 30,
+                                },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.4,
+                                    },
+                                },
+                            },
+                        }}
+                    >
+                        {t('subtitle')}
+                    </TextEffect>
                 </div>
+                <motion.div 
+                    className="px-3 pt-3 md:-mx-8"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 1.5, // بعد از title و subtitle نمایش داده می‌شود
+                        ease: "easeOut"
+                    }}
+                >
+                    <div className="aspect-88/45 mask-b-from-75% mask-b-to-95% relative">
+                        <Image
+                            src="/img/img-hero.png"
+                            className="w-full h-full object-cover"
+                            alt="Lyra ecosystem illustration"
+                            width={2797}
+                            height={1137}
+                        />
+                    </div>
+                </motion.div>
+                <motion.div 
+                    className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 2.0, // بعد از image نمایش داده می‌شود
+                        ease: "easeOut"
+                    }}
+                >
+                    {features.map((feature, index) => {
+                        const Icon = feature.icon;
+                        return (
+                            <motion.div 
+                                key={feature.key} 
+                                className="space-y-2"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                transition={{
+                                    duration: 0.4,
+                                    delay: 2.2 + (index * 0.1), // هر feature با تاخیر کمی نمایش داده می‌شود
+                                    ease: "easeOut"
+                                }}
+                            >
+                                <div className="flex items-center gap-2">
+                                    <Icon className="size-4" />
+                                    <h3 className="text-sm font-medium">{t(`${feature.key}.title`)}</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">{t(`${feature.key}.description`)}</p>
+                            </motion.div>
+                        );
+                    })}
+                </motion.div>
             </div>
         </section>
     )
