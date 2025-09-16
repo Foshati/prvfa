@@ -127,14 +127,14 @@ const ValveAnalysis: React.FC = () => {
           labels: ["آزمایش 1", "آزمایش 2", "آزمایش 3", "آزمایش 4"],
           datasets: [
             {
-              label: "شیر فشار شکن ساده مدل دوم",
+              label: "شیر فشارشکن پلیمری ساده مدل 2 (PRV-SM2)",
               data: simpleProcessed.map((item) => parseFloat(item.efficiency)),
               backgroundColor: "rgba(46, 204, 113, 0.8)",
               borderColor: "rgba(39, 174, 96, 1)",
               borderWidth: 2,
             },
             {
-              label: "شیر فشار شکن پیشرفته مدل دوم",
+              label: "شیر فشارشکن پلیمری پیشرفته مدل 2 (PRV-AM2)",
               data: advancedProcessed.map((item) =>
                 parseFloat(item.efficiency)
               ),
@@ -193,7 +193,7 @@ const ValveAnalysis: React.FC = () => {
           labels: ["آزمایش 1", "آزمایش 2", "آزمایش 3", "آزمایش 4"],
           datasets: [
             {
-              label: "شیر فشار شکن ساده مدل دوم",
+              label: "شیر فشارشکن پلیمری ساده مدل 2 (PRV-SM2)",
               data: simpleProcessed.map((item) => item.pressureDrop),
               backgroundColor: "rgba(46, 204, 113, 0.3)",
               borderColor: "rgba(39, 174, 96, 1)",
@@ -202,7 +202,7 @@ const ValveAnalysis: React.FC = () => {
               tension: 0.4,
             },
             {
-              label: "شیر فشار شکن پیشرفته مدل دوم",
+              label: "شیر فشارشکن پلیمری پیشرفته مدل 2 (PRV-AM2)",
               data: advancedProcessed.map((item) => item.pressureDrop),
               backgroundColor: "rgba(52, 152, 219, 0.3)",
               borderColor: "rgba(41, 128, 185, 1)",
@@ -279,8 +279,8 @@ const ValveAnalysis: React.FC = () => {
             className="border border-gray-300 p-4 text-sm text-center font-bold text-slate-700 bg-white"
           >
             {valveType === "simple"
-              ? "شیر فشارشکن پلیمری ساده"
-              : "شیر فشارشکن پلیمری پیشرفته"}
+              ? "شیر فشارشکن پلیمری ساده مدل 2 (PRV-SM2)"
+              : "شیر فشارشکن پلیمری پیشرفته مدل 2 (PRV-AM2)"}
           </td>
         )}
         <td className="border border-gray-300 p-4 text-sm text-center">
@@ -305,7 +305,7 @@ const ValveAnalysis: React.FC = () => {
   return (
     <div
       dir="rtl"
-      className="font-['B-NAZANIN','Tahoma',Arial,sans-serif] m-5 bg-gray-100 min-h-screen"
+      className="font-['B-NAZANIN','Tahoma',Arial,sans-serif] font-sans m-5 bg-gray-100 min-h-screen"
     >
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h1 className="text-center text-slate-700 mb-8 border-b-4 border-blue-500 pb-3 text-2xl font-bold">
@@ -378,7 +378,7 @@ const ValveAnalysis: React.FC = () => {
             <tbody>
               <tr className="border-r-4 border-green-500 bg-white hover:bg-blue-50 transition-all duration-200">
                 <td className="border border-gray-300 p-4 text-sm text-center font-bold text-slate-700">
-                  شیر فشارشکن پلیمری ساده
+                  شیر فشارشکن پلیمری ساده مدل 2 (PRV-SM2)
                 </td>
                 <td className="border border-gray-300 p-4 text-sm text-center">
                   {simpleSummary.avgDrop}
@@ -392,7 +392,7 @@ const ValveAnalysis: React.FC = () => {
               </tr>
               <tr className="border-r-4 border-blue-500 bg-gray-50 hover:bg-blue-50 transition-all duration-200">
                 <td className="border border-gray-300 p-4 text-sm text-center font-bold text-slate-700">
-                  شیر فشارشکن پلیمری پیشرفته
+                  شیر فشارشکن پلیمری پیشرفته مدل 2 (PRV-AM2)
                 </td>
                 <td className="border border-gray-300 p-4 text-sm text-center">
                   {advancedSummary.avgDrop}

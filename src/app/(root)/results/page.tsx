@@ -5,7 +5,7 @@ export default function page() {
   return (
     <div>
       
-      <ValveAnalysis/>
+      <ValveAnalysis />
       <PRVAnalysisDashboard/>
     </div>
   )

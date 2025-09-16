@@ -52,15 +52,15 @@ const PressureValveTypes = () => {
     }
   ];
 
-  const getImagePath = (subType, index) => {
-    const folderMap = {
+  const getImagePath = (subType: string, index: number) => {
+    const folderMap: Record<string, string> = {
       'Direct Acting Piston Type': 'شیرهای فشارشکن مستقیم نوع پیستونی',
       'Direct Acting Diaphragm Type': 'شیرهای فشارشکن مستقیم نوع دیافراگمی',
       'Internal Pilot Operated': 'شیرهای فشارشکن با پایلوت داخلی',
       'External Pilot Operated': 'شیرهای فشارشکن با پایلوت خارجی'
     };
     
-    const imageMap = {
+    const imageMap: Record<string, string[]> = {
       'شیرهای فشارشکن مستقیم نوع پیستونی': [
         'Screenshot 2025-09-15 at 23.04.15.png',
         'Screenshot 2025-09-15 at 23.04.23.png'

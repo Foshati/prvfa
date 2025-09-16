@@ -4,6 +4,7 @@ import { CheckCircle, Target, Wrench, Lightbulb } from 'lucide-react';
 export default function PRVSummary() {
   const results = [
     { title: "مدل‌های منتخب", desc: "PRV-SM2 (ساده، 31.58% کاهش فشار) و PRV-AM2 (پیشرفته، 66.20% کاهش فشار)" },
+    { title: "مکانیزم مستقیم درپوشی", desc: "مکانیزم مهندسی سبک و مقرون‌به‌صرفه که مشکلات مکانیزم‌های پیستونی و دیافراگمی را ندارد و عملکرد پایدار و دقیق ارائه می‌دهد" },
     { title: "مواد موفق", desc: "PVC و UPVC با مقاومت بالا در برابر خوردگی و وزن سبک" },
     { title: "چسب‌های فشارقوی", desc: "تارگت، پاتکس و REINZOSIL با کارایی عالی در آب‌بندی" },
     { title: "تیوب‌های لاستیکی", desc: "کاهش شوک هیدرولیکی و ضربه قوچ" },
@@ -108,8 +109,7 @@ export default function PRVSummary() {
         <div className="mt-12 text-center">
           <div className="bg-gray-100 rounded-lg p-6">
             <p className="text-gray-600">
-              این تحقیق نشان داد که شیرهای فشارشکن پلیمری می‌توانند جایگزینی مقرون‌به‌صرفه و کارآمد 
-              برای شیرهای فلزی سنتی باشند و با بهبودهای پیشنهادی، عملکرد بهتری خواهند داشت.
+              The End
             </p>
           </div>
         </div>

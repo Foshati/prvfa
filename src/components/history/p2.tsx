@@ -159,7 +159,7 @@ const ResearchTable = () => {
     }
   ];
 
-  const getCategoryBorder = (category) => {
+  const getCategoryBorder = (category: string) => {
     switch (category) {
       case "پیشینه کلی":
         return "border-r-8 border-r-purple-500";

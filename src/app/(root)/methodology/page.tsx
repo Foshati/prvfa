@@ -26,7 +26,7 @@ const ExperimentalDesignPage = () => {
                   height={400}
                   className="w-full h-auto object-contain rounded-lg bg-gray-50"
                 />
-                <p className="text-sm text-gray-600 mt-2 text-center">تصویر طراحی {index + 1}</p>
+                <p className="text-sm text-gray-600 mt-2 text-center">{index === 0 ? 'عوامل ایجاد فشار در خطوط انتقال و توزیع آب و نکات محل اتصال' : 'شماتیک طراحی محل آزمایش'}</p>
               </div>
             ))}
           </div>
@@ -47,14 +47,14 @@ const ExperimentalDesignPage = () => {
                   height={200}
                   className="w-full h-32 object-cover rounded-lg"
                 />
-                <p className="text-xs text-gray-600 mt-1 text-center">تصویر طراحی {index + 3}</p>
+                <p className="text-xs text-gray-600 mt-1 text-center">{index === 0 ? 'محل آزمایش پلی اتیلن' : index === 1 ? 'محل آزمایش پلی اتیلن با شیر' : index === 2 ? 'مراحل اتصال پلی اتیلن' : 'ابزار محاسبه دبی'}</p>
               </div>
             ))}
           </div>
           
           {/* Summary Results Image */}
           <div className="mt-8">
-            <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">خلاصه نتایج</h3>
+            <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">    خلاصه نتایج محل ازمایش</h3>
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <Image
                 src="/img/methodology/طراحی و روش آزمایش شیر فشارشکن/خلاصه نتایج.png"
@@ -78,8 +78,8 @@ const ExperimentalDesignPage = () => {
           {/* Experimental Models */}
           {[
             { name: 'اول', folder: 'مدل ازمایش اول', images: ['Screenshot 2025-09-15 at 22.30.00.png', 'Screenshot 2025-09-15 at 22.30.09.png'], zoomLess: [false, true] },
-            { name: 'دوم', folder: 'مدل ازمایش دوم', images: ['Screenshot 2025-09-15 at 22.30.38.png', 'Screenshot 2025-09-15 at 22.30.47.png'], zoomLess: [true, false] },
-            { name: 'سوم', folder: 'مدل ازمایشی سوم', images: ['Screenshot 2025-09-15 at 22.31.08.png'], zoomLess: [true] },
+            { name: 'دوم', folder: 'مدل ازمایش دوم', images: ['Screenshot 2025-09-15 at 22.30.47.png', 'Screenshot 2025-09-15 at 22.30.38.png'], zoomLess: [false, true] },
+            { name: 'سوم', folder: 'مدل ازمایشی سوم', images: ['Screenshot 2025-09-15 at 22.31.08.png', 'روپیچ-توپیچ-گالوانیزه-2.jpg'], zoomLess: [true, true] },
             { name: 'چهارم', folder: 'مدل ازمایشی چهارم', images: ['Screenshot 2025-09-15 at 22.31.31.png', 'Screenshot 2025-09-15 at 22.31.39.png'], zoomLess: [false, true] },
             { name: 'پنجم', folder: 'مدل ازمایشی پنجم', images: ['Screenshot 2025-09-15 at 22.33.07.png'], zoomLess: [false] }
           ].map((model, modelIndex) => (
@@ -99,7 +99,16 @@ const ExperimentalDesignPage = () => {
                       className={`w-full rounded-lg ${model.zoomLess[imgIndex] ? 'h-40 object-contain bg-gray-50' : 'h-48 object-cover'}`}
                     />
                     <p className="text-sm text-gray-600 mt-2 text-center">
-                      مدل آزمایشی {model.name} - تصویر {imgIndex + 1}
+                      {model.name === 'اول' && imgIndex === 0 ? 'مدل آزمایشی اول ساخته شده' : 
+                       model.name === 'اول' && imgIndex === 1 ? 'چسب های منتخب در مدل آزمایشی اول' :
+                       model.name === 'دوم' && imgIndex === 0 ? 'مدل آزمایشی دوم ساخته شده' :
+                       model.name === 'دوم' && imgIndex === 1 ? 'مدل های تست شده مواد الاستومری در مدل آزمایشی دوم' :
+                       model.name === 'سوم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی سوم' :
+                       model.name === 'سوم' && imgIndex === 1 ? 'در مدل آزمایشی سوم، استفاده از روپیچ-توپیچ گالوانیزه در اتصالات ورودی و خروجی شیر فشارشکن موجب عملکرد نامطلوب سیستم شد' :
+                       model.name === 'چهارم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی چهارم' :
+                       model.name === 'چهارم' && imgIndex === 1 ? 'انتخاب درپوش پایه بلند پلاستیکی به عنوان مسدود کننده در مدل آزمایشی چهارم' :
+                       model.name === 'پنجم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی پنجم' :
+                       `مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                     </p>
                   </div>
                 ))}
@@ -136,7 +145,7 @@ const ExperimentalDesignPage = () => {
                       className="w-full h-auto object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                      PRV-SM1 - تصویر {imgIndex + 1}
+                      {imgIndex === 0 ? 'شماتیک طراحی شیر فشار شکن ساده مدل اول' : 'مدل ساخته شده شیر فشار شکن ساده مدل اول'}
                     </p>
                   </div>
                 ))}
@@ -168,7 +177,7 @@ const ExperimentalDesignPage = () => {
                         className="w-full h-auto object-contain rounded-lg bg-gray-50"
                       />
                       <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                        PRV-SM2 - تصویر {item.index}
+                        {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن ساده مدل دوم' : item.index === 2 ? 'مدل ساخته شده شیر فشار شکن ساده مدل دوم' : item.index === 3 ? 'محل آزمایش شیر فشارشکن ساده مدل دوم' : 'گیج های ورودی و خروجی شیر فشار شکن ساده مدل دوم'}
                       </p>
                     </div>
                   ))}
@@ -185,7 +194,7 @@ const ExperimentalDesignPage = () => {
                       className="w-full h-auto object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                      PRV-SM2 - تصویر 5
+                      مکانیزم ساده مستقیم فنر دار
                     </p>
                   </div>
                 </div>
@@ -213,7 +222,7 @@ const ExperimentalDesignPage = () => {
                       className={`w-full rounded-lg ${item.needsContain ? 'h-auto object-contain bg-gray-50' : 'h-48 object-cover'}`}
                     />
                     <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                      PRV-SM3 - تصویر {imgIndex + 1}
+                      {imgIndex === 0 ? 'شماتیک طراحی شیر فشار شکن ساده مدل سوم' : 'مدل ساخته شده شیر فشار شکن ساده مدل سوم'}
                     </p>
                   </div>
                 ))}
@@ -255,7 +264,7 @@ const ExperimentalDesignPage = () => {
                         className="w-full h-48 object-cover rounded-lg"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        PRV-AM1 - تصویر {item.index}
+                        {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن پیشرفته مدل اول' : 'مدل ساخته شده شیر فشار شکن پیشرفته مدل اول'}
                       </p>
                     </div>
                   ))}
@@ -277,7 +286,7 @@ const ExperimentalDesignPage = () => {
                         className={`w-full rounded-lg ${item.useContain ? 'h-auto object-contain bg-gray-50' : 'h-48 object-cover'}`}
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        PRV-AM1 - تصویر {item.index}
+                        {item.index === 2 ? 'مکانیزم درپوشی' : item.index === 4 ? 'گیج فشار ورودی و خروجی شیر فشارشکن پیشرفته مدل اول' : 'نمونه ساخته شده پیستون پلیمری'}
                       </p>
                     </div>
                   ))}
@@ -294,7 +303,7 @@ const ExperimentalDesignPage = () => {
                       className="w-full h-auto object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                      PRV-AM1 - تصویر 3
+                      آزمایش شیر فشار شکن پیشرفته مدل اول
                     </p>
                   </div>
                 </div>
@@ -324,7 +333,7 @@ const ExperimentalDesignPage = () => {
                         className="w-full h-48 object-cover rounded-lg"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        PRV-AM2 - تصویر {item.index}
+                        {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن پیشرفته مدل دوم' : 'مدل ساخته شده شیر فشارشکن پیشرفته مدل دوم'}
                       </p>
                     </div>
                   ))}
@@ -344,7 +353,7 @@ const ExperimentalDesignPage = () => {
                         className="w-full h-48 object-cover rounded-lg"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        PRV-AM2 - تصویر {item.index}
+                        گیج های فشار ورودی و خروجی شیر فشار شکن پیشرفته مدل دوم
                       </p>
                     </div>
                   ))}
@@ -361,7 +370,7 @@ const ExperimentalDesignPage = () => {
                       className="w-full h-auto object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                      PRV-AM2 - تصویر 2
+                      محل آزمایش شیر فشارشکن پیشرفته مدل دوم
                     </p>
                   </div>
                 </div>
