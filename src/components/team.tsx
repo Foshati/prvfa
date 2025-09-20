@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const professors = [
     {
@@ -56,7 +57,7 @@ export default function TeamSection() {
                         {professors.map((member, index) => (
                             <div key={index}>
                                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
-                                    <img className="aspect-square rounded-full object-cover" src={member.avatar} alt={t(`names.${member.nameKey}`)} height="460" width="460" loading="lazy" />
+                                    <Image className="aspect-square rounded-full object-cover" src={member.avatar} alt={t(`names.${member.nameKey}`)} height={460} width={460} />
                                 </div>
                                 <span className="mt-2 block text-sm">{t(`names.${member.nameKey}`)}</span>
                                 <span className="text-muted-foreground block text-xs whitespace-pre-line">{t(member.roleKey)}</span>
@@ -72,7 +73,7 @@ export default function TeamSection() {
                             <div key={index}>
                                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
                                     {member.avatar ? (
-                                        <img className="aspect-square rounded-full object-cover" src={member.avatar} alt={t(`names.${member.nameKey}`)} height="460" width="460" loading="lazy" />
+                                        <Image className="aspect-square rounded-full object-cover" src={member.avatar} alt={t(`names.${member.nameKey}`)} height={460} width={460} />
                                     ) : (
                                         <div className={`aspect-square rounded-full ${member.color}`}>
                                         </div>

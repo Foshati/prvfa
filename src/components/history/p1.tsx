@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, Wrench, Gauge, Cog } from 'lucide-react';
+import { Settings, Gauge, Cog } from 'lucide-react';
 import Image from 'next/image';
 
 const PressureValveTypes = () => {
@@ -82,7 +82,7 @@ const PressureValveTypes = () => {
     const folder = folderMap[subType];
     const filename = imageMap[folder]?.[index - 1];
     
-    return filename ? `/img/literature-review/${folder}/${filename}` : null;
+    return filename ? `/img/literature-review/${encodeURIComponent(folder)}/${filename}` : null;
   };
 
   return (
@@ -103,7 +103,7 @@ const PressureValveTypes = () => {
         </div>
 
         {/* Main Types */}
-        {valveTypes.map((mainType, index) => (
+        {valveTypes.map((mainType) => (
           <div key={mainType.id} className="mb-16">
             {/* Main Type Header */}
             <div className={`p-6 rounded-t-xl ${
