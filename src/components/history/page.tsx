@@ -1,30 +1,28 @@
 "use client";
 
+import Image from 'next/image';
+
 export default function HistoryPage() {
   const historyData = [
     {
       id: 1,
-      generation: "قرن نوزدهم - اواسط ۱۸۸۰",
-      algorithms: "طراحی نخستین شیرهای کاهش‌دهنده فشار مستقیم‌عمل با مکانیزم پیستونی و فنر",
-      features: "ویلیام فیشر شیرهای مستقیم‌عمل برای پمپ‌های بخار معرفی کرد، ویلیام میسون شیرهای کاهنده فشار را برای سیستم‌های گرمایش بخار و ناوگان دریایی طراحی کرد"
+      generation: "اواخر قرن نوزدهم-۱۸۸۰ ",
+      featuresAndAlgorithms: "ویلیام فیشر شیر های مستقیم عمل کننده را برای پمپ های بخار معرفی کرد و شرکت فیشر کنترل را در همان سال ها تاسیس کرد. هم زمان ویلیام میسون شیر های کاهنده فشار برای سیستم‌های گرمایش بخار و ناوگان دریایی طراحی کرد."
     },
     {
       id: 2,
       generation: "اوایل تا اواسط قرن بیستم",
-      algorithms: "توسعه شیرهای دو مرحله‌ای پایلوت‌دار و شیرهای فولادی مقاوم",
-      features: "شیر پایلوت کوچک فشار خروجی را کنترل می‌کرد، توماس نیلان شیرهای فولادی مقاومی برای خطوط انتقال آب و نفت عرضه کرد"
+      featuresAndAlgorithms:"توسعه‌ی شیرهای دو‌مرحله‌ای پایلوت‌دار با جنس فولادی، یکی از نوآوری‌های مهم در زمینه‌ی کنترل فشار محسوب می‌شود. شرکت فیشر کنترل از پیشگامان معرفی این نوع شیرها بوده است. همچنین توماس نیلان شیرهای فشارشکن برای کاربر خطوط انتقال اب و نفت عرضه کرد که نقش قابل‌توجهی در گسترش کاربرد این تجهیزات ایفا کرد."
     },
     {
       id: 3,
       generation: "اواخر قرن بیستم",
-      algorithms: "معرفی محرک‌های دیافراگمی چندفنره و موقعیت‌دهنده‌های الکترونیکی",
-      features: "امکان اتصال به سیستم‌های SCADA، بهبود متریال بدنه با آلیاژها و پوشش‌های مقاوم، کاهش خوردگی و نشتی"
+      featuresAndAlgorithms:"بهبود جنس بدنه و پوشش‌های ضد زنگ و امکان اتصال به سیستم‌های scada در شیر های فشار شکن"
     },
     {
       id: 4,
       generation: "قرن بیست‌ویکم",
-      algorithms: "شیرهای هوشمند با حسگرها، کنترلرهای الکترونیکی و اینترنت اشیا (IoT)",
-      features: "کنترل دقیق فشار از راه دور، استفاده از الگوریتم‌های پیشرفته، آلیاژهای بدون سرب و پوشش‌های ضدخوردگی"
+      featuresAndAlgorithms: "شیرهای فشارشکن با قابلیت هوشمند و وصل شدن به کنترلر های الکترونیکی و اینترنت اشیا"
     }
   ];
 
@@ -33,26 +31,14 @@ export default function HistoryPage() {
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
         تاریخچه توسعه شیرهای فشارشکن
       </h1>
-      
-      <div className="mb-6 text-gray-700 leading-relaxed text-justify bg-gray-50 p-6 rounded-lg">
-        <p className="mb-4">
-          شیرهای فشارشکن به‌عنوان یکی از اجزای کلیدی سیستم‌های انتقال و توزیع سیالات، 
-          نقش مهمی در کنترل فشار، حفاظت از تجهیزات و افزایش کارایی شبکه‌های آب، نفت و بخار ایفا کرده‌اند.
-        </p>
-        <p>
-          با گسترش شبکه‌های آبرسانی و توسعه فناوری‌های صنعتی در قرن نوزدهم، 
-          نیاز به ابزارهای خودکار و دقیق برای کنترل فشار سیالات به صورت پیوسته افزایش یافت.
-        </p>
-      </div>
-
+               
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-800 text-white">
               <tr>
                 <th className="px-4 py-4 text-center font-medium">دوران زمانی</th>
-                <th className="px-4 py-4 text-center font-medium">تحولات اصلی</th>
-                <th className="px-4 py-4 text-center font-medium">ویژگی‌ها  </th>
+                <th className="px-4 py-4 text-center font-medium">ویژگی‌ها و تحولات اصلی</th>
               </tr>
             </thead>
             <tbody>
@@ -70,12 +56,7 @@ export default function HistoryPage() {
                   </td>
                   <td className="px-4 py-6 text-center">
                     <div className="text-gray-700 text-sm leading-relaxed">
-                      {item.algorithms}
-                    </div>
-                  </td>
-                  <td className="px-4 py-6 text-center">
-                    <div className="text-gray-700 text-sm leading-relaxed">
-                      {item.features}
+                      {item.featuresAndAlgorithms}
                     </div>
                   </td>
                 </tr>
@@ -85,13 +66,34 @@ export default function HistoryPage() {
         </div>
       </div>
 
-      <div className="mt-6 text-sm text-gray-600 bg-blue-50 p-4 rounded-lg">
-        <h3 className="font-semibold mb-2">شخصیت‌های کلیدی:</h3>
-        <ul className="space-y-1">
-          <li><strong>ویلیام فیشر:</strong> بنیان‌گذار شرکت فیشر و طراح نخستین شیرهای کاهش‌دهنده فشار</li>
-          <li><strong>ویلیام بی میسون:</strong> طراح شیرهای کاهنده فشار برای سیستم‌های گرمایش بخار</li>
-          <li><strong>توماس نیلان:</strong> عرضه‌کننده شیرهای فولادی مقاومی از شرکت نیلان</li>
-        </ul>
+      {/* Images Section */}
+      <div className="grid md:grid-cols-2 gap-6 mt-8">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="relative h-64">
+            <Image
+              src="/img/history/image2.png"
+              alt="تاریخچه شیرهای فشارشکن"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <p className="text-sm font-medium text-gray-700">شیر فشار شکن مدل PRV-Cla-Val 390-02 & 3690-02</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="relative h-64">
+            <Image
+              src="/img/history/image1.png"
+              alt="تکامل شیرهای کنترل فشار"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <p className="text-sm font-medium text-gray-700">کنترلر الکترونیکی شیر فشارشکن Regulo PRV Electronic Controller</p>
+          </div>
+        </div>
       </div>
     </div>
   );

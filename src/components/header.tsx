@@ -7,9 +7,11 @@ import { cn } from '@/lib/utils'
 import { ModeToggle } from './darkmode/modeToggle'
 import { useTranslations } from 'next-intl'
 import { LanguageSwitcher } from '@/i18n/language-switcher'
+import { usePathname } from 'next/navigation'
 
 export const Header = () => {
     const t = useTranslations('Header')
+    const pathname = usePathname()
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
 
@@ -45,29 +47,29 @@ export const Header = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-2 text-sm">
                                 <li>
-                                    <Link href="/introduction" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/introduction" className={cn("block duration-150 px-3 py-2 rounded-lg", pathname === '/introduction' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                         <span>{t('introduction')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/literature-review" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/literature-review" className={cn("block duration-150 px-3 py-2 rounded-lg", pathname === '/literature-review' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                         <span>{t('literature')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/methodology" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/methodology" className={cn("block duration-150 px-3 py-2 rounded-lg", pathname === '/methodology' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                         <span>{t('methodology')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/results" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/results" className={cn("block duration-150 px-3 py-2 rounded-lg", pathname === '/results' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                         <span>{t('results')}</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/recommendations" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                    <Link href="/recommendations" className={cn("block duration-150 px-3 py-2 rounded-lg", pathname === '/recommendations' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                         <span>{t('conclusion')}</span>
                                     </Link>
                                 </li>
@@ -76,29 +78,29 @@ export const Header = () => {
 
                         <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
+                                <ul className="space-y-3 text-base">
                                     <li>
-                                        <Link href="/introduction" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/introduction" className={cn("block duration-150 px-4 py-3 rounded-lg", pathname === '/introduction' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                             <span>{t('introduction')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/literature-review" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/literature-review" className={cn("block duration-150 px-4 py-3 rounded-lg", pathname === '/literature-review' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                             <span>{t('literature')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/methodology" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/methodology" className={cn("block duration-150 px-4 py-3 rounded-lg", pathname === '/methodology' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                             <span>{t('methodology')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/results" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/results" className={cn("block duration-150 px-4 py-3 rounded-lg", pathname === '/results' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                             <span>{t('results')}</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/recommendations" className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                        <Link href="/recommendations" className={cn("block duration-150 px-4 py-3 rounded-lg", pathname === '/recommendations' ? 'text-foreground bg-background/50 backdrop-blur-sm border border-border/50' : 'text-muted-foreground hover:text-accent-foreground hover:bg-accent/10')}>
                                             <span>{t('conclusion')}</span>
                                         </Link>
                                     </li>
