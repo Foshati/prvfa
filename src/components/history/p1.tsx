@@ -75,6 +75,7 @@ const PressureValveTypes = () => {
       ],
       'شیرهای فشارشکن با پایلوت خارجی': [
         'Screenshot 2025-09-15 at 23.05.15.png',
+        'Screenshot 2025-09-15 at 23.05.152.png',
         'Screenshot 2025-09-15 at 23.05.22.png'
       ]
     };

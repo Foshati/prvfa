@@ -170,7 +170,7 @@ const ExperimentalDesignPage = () => {
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm">
                       <Image
-                        src={`/img/methodology/شیر فشارشکن ساده مدل 2/${item.file}`}
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن ساده مدل 2')}/${item.file}`}
                         alt={`PRV-SM2 - تصویر ${item.index}`}
                         width={400}
                         height={300}
@@ -187,7 +187,7 @@ const ExperimentalDesignPage = () => {
                 <div className="flex justify-center">
                   <div className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm max-w-md">
                     <Image
-                      src="/img/methodology/شیر فشارشکن ساده مدل 2/Screenshot 2025-09-15 at 22.34.39.png"
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن ساده مدل 2')}/Screenshot 2025-09-15 at 22.34.39.png`}
                       alt="PRV-SM2 - تصویر 5"
                       width={300}
                       height={500}
@@ -215,7 +215,7 @@ const ExperimentalDesignPage = () => {
                 ].map((item, imgIndex) => (
                   <div key={imgIndex} className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm">
                     <Image
-                      src={`/img/methodology/شیر فشارشکن ساده مدل 3/${item.file}`}
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن ساده مدل 3')}/${item.file}`}
                       alt={`PRV-SM3 - تصویر ${imgIndex + 1}`}
                       width={400}
                       height={300}
@@ -257,7 +257,7 @@ const ExperimentalDesignPage = () => {
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                       <Image
-                        src={`/img/methodology/شیر فشارشکن پیشرفته مدل 1/${item.file}`}
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/${item.file}`}
                         alt={`PRV-AM1 - تصویر ${item.index}`}
                         width={400}
                         height={300}
@@ -279,7 +279,7 @@ const ExperimentalDesignPage = () => {
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                       <Image
-                        src={`/img/methodology/شیر فشارشکن پیشرفته مدل 1/${item.file}`}
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/${item.file}`}
                         alt={`PRV-AM1 - تصویر ${item.index}`}
                         width={400}
                         height={300}
@@ -296,7 +296,7 @@ const ExperimentalDesignPage = () => {
                 <div className="flex justify-center">
                   <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm max-w-md">
                     <Image
-                      src="/img/methodology/شیر فشارشکن پیشرفته مدل 1/Screenshot 2025-09-15 at 22.37.05.png"
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.37.05.png`}
                       alt="PRV-AM1 - تصویر 3"
                       width={300}
                       height={500}
@@ -326,7 +326,7 @@ const ExperimentalDesignPage = () => {
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                       <Image
-                        src={`/img/methodology/شیر فشارشکن پیشرفته مدل 2/${item.file}`}
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 2')}/${item.file}`}
                         alt={`PRV-AM2 - تصویر ${item.index}`}
                         width={400}
                         height={300}
@@ -346,7 +346,7 @@ const ExperimentalDesignPage = () => {
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                       <Image
-                        src={`/img/methodology/شیر فشارشکن پیشرفته مدل 2/${item.file}`}
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 2')}/${item.file}`}
                         alt={`PRV-AM2 - تصویر ${item.index}`}
                         width={400}
                         height={300}
@@ -363,7 +363,7 @@ const ExperimentalDesignPage = () => {
                 <div className="flex justify-center">
                   <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm max-w-md">
                     <Image
-                      src="/img/methodology/شیر فشارشکن پیشرفته مدل 2/Screenshot 2025-09-15 at 22.38.30.png"
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 2')}/Screenshot 2025-09-15 at 22.38.30.png`}
                       alt="PRV-AM2 - تصویر 2"
                       width={300}
                       height={500}
