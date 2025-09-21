@@ -54,15 +54,17 @@ const ExperimentalDesignPage = () => {
           
           {/* Summary Results Image */}
           <div className="mt-8">
-            <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">    خلاصه نتایج محل ازمایش</h3>
+            <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">خلاصه نتایج آزمایشات</h3>
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <Image
-                src={`/img/methodology/${encodeURIComponent('طراحی و روش آزمایش شیر فشارشکن')}/خلاصه نتایج.png`}
+                src="/img/methodology/طراحی و روش آزمایش شیر فشارشکن/res.png"
                 alt="خلاصه نتایج آزمایشات"
-                width={800}
-                height={600}
-                className="w-full h-auto object-contain rounded-lg bg-gray-50"
+                width={1000}
+                height={700}
+                className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
+                priority
               />
+              <p className="text-sm text-gray-600 mt-3 text-center font-medium">خلاصه نتایج آزمایشات انجام شده بر روی مدل‌های مختلف شیر فشارشکن</p>
             </div>
           </div>
         </div>
@@ -92,7 +94,7 @@ const ExperimentalDesignPage = () => {
                 {model.images.map((filename, imgIndex) => (
                   <div key={imgIndex} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                     <Image
-                      src={`/img/methodology/${encodeURIComponent(model.folder)}/${filename}`}
+                      src={model.name === 'سوم' && imgIndex === 1 ? "/img/methodology/مدل ازمایشی سوم/galvanize.jpg" : `/img/methodology/${encodeURIComponent(model.folder)}/${filename}`}
                       alt={`مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                       width={400}
                       height={300}
