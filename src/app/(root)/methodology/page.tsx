@@ -57,7 +57,7 @@ const ExperimentalDesignPage = () => {
             <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">خلاصه نتایج آزمایشات</h3>
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <Image
-                src="/img/methodology/طراحی و روش آزمایش شیر فشارشکن/res.png"
+                src="/img/methodology/fix/res.png"
                 alt="خلاصه نتایج آزمایشات"
                 width={1000}
                 height={700}
@@ -80,7 +80,7 @@ const ExperimentalDesignPage = () => {
           {/* Experimental Models */}
           {[
             { name: 'اول', folder: 'مدل ازمایش اول', images: ['Screenshot 2025-09-15 at 22.30.00.png', 'Screenshot 2025-09-15 at 22.30.09.png'], zoomLess: [false, true] },
-            { name: 'دوم', folder: 'مدل ازمایش دوم', images: ['Screenshot 2025-09-15 at 22.30.47.png', 'Screenshot 2025-09-15 at 22.30.38.png'], zoomLess: [false, true] },
+            { name: 'دوم', folder: 'مدل ازمایش دوم', images: ['test2.png', 'Screenshot 2025-09-15 at 22.30.38.png'], zoomLess: [false, true] },
             { name: 'سوم', folder: 'مدل ازمایشی سوم', images: ['Screenshot 2025-09-15 at 22.31.08.png', 'روپیچ-توپیچ-گالوانیزه-2.jpg'], zoomLess: [true, true] },
             { name: 'چهارم', folder: 'مدل ازمایشی چهارم', images: ['Screenshot 2025-09-15 at 22.31.31.png', 'Screenshot 2025-09-15 at 22.31.39.png'], zoomLess: [false, true] },
             { name: 'پنجم', folder: 'مدل ازمایشی پنجم', images: ['Screenshot 2025-09-15 at 22.33.07.png'], zoomLess: [false] }
@@ -94,7 +94,7 @@ const ExperimentalDesignPage = () => {
                 {model.images.map((filename, imgIndex) => (
                   <div key={imgIndex} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                     <Image
-                      src={model.name === 'سوم' && imgIndex === 1 ? "/img/methodology/مدل ازمایشی سوم/galvanize.jpg" : `/img/methodology/${encodeURIComponent(model.folder)}/${filename}`}
+                      src={model.name === 'سوم' && imgIndex === 1 ? "/img/methodology/fix/galvanize.png" : model.name === 'دوم' && imgIndex === 0 ? "/img/methodology/fix/test2.png" : `/img/methodology/${encodeURIComponent(model.folder)}/${filename}`}
                       alt={`مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                       width={400}
                       height={300}
