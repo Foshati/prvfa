@@ -19,6 +19,7 @@
     "supervisor": "Supervisor",
     "advisor": "Advisor",
     "referee": "Referee",
+    "graduateRepresentative": "Graduate Studies Representative",
     "thesisAuthor": "Thesis Author\n(Designer & Manufacturer of Pressure-Reducing Valve)",
     "researcher": "Researcher",
     "labAssistant": "Laboratory Assistant",
@@ -28,9 +29,10 @@
       "baghlani": "Dr. Abdolhossein Baghlani",
       "daneshvar": "Dr. Farnoush Aghaee Daneshvar",
       "hekmatzadeh": "Dr. Ali Akbar Hekmatzadeh",
+      "hadian": "Dr. Mohammad Ali Hadian Fard",
       "amirrezaFoshati": "Eng. Amirreza Foshati",
       "amirhosseinFoshati": "Eng. AmirHossein Foshati",
-      "aliSehat": "Eng. Ali Sehat",
+      "aliSehat": "Eng. Mansour Sehat",
       "mehdiAhmadi": "Eng. Mehdi Ahmadi"
     }
   },

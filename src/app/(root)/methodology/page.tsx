@@ -45,7 +45,7 @@ const ExperimentalDesignPage = () => {
                   alt={`تصویر طراحی ${index + 3}`}
                   width={300}
                   height={200}
-                  className="w-full h-32 object-cover rounded-lg"
+                  className="w-full h-32 object-contain rounded-lg bg-gray-50"
                 />
                 <p className="text-xs text-gray-600 mt-1 text-center">{index === 0 ? 'محل آزمایش پلی اتیلن' : index === 1 ? 'محل آزمایش پلی اتیلن با شیر' : index === 2 ? 'مراحل اتصال پلی اتیلن' : 'ابزار محاسبه دبی'}</p>
               </div>
@@ -61,7 +61,7 @@ const ExperimentalDesignPage = () => {
                 alt="خلاصه نتایج آزمایشات"
                 width={800}
                 height={600}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto object-contain rounded-lg bg-gray-50"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ const ExperimentalDesignPage = () => {
                       alt={`مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                       width={400}
                       height={300}
-                      className={`w-full rounded-lg ${model.zoomLess[imgIndex] ? 'h-40 object-contain bg-gray-50' : 'h-48 object-cover'}`}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-gray-600 mt-2 text-center">
                       {model.name === 'اول' && imgIndex === 0 ? 'مدل آزمایشی اول ساخته شده' : 
@@ -176,8 +176,8 @@ const ExperimentalDesignPage = () => {
                         height={300}
                         className="w-full h-auto object-contain rounded-lg bg-gray-50"
                       />
-                      <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                        {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن ساده مدل دوم' : item.index === 2 ? 'مدل ساخته شده شیر فشار شکن ساده مدل دوم' : item.index === 3 ? 'محل آزمایش شیر فشارشکن ساده مدل دوم' : 'گیج های ورودی و خروجی شیر فشار شکن ساده مدل دوم'}
+                      <p className="text-sm text-purple-700 font-medium mt-2 text-center whitespace-pre-line">
+                        {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن ساده مدل دوم' : item.index === 2 ? 'مدل ساخته شده شیر فشار شکن ساده مدل دوم' : item.index === 3 ? 'محل آزمایش شیر فشارشکن ساده مدل دوم' : 'گیج های ورودی و خروجی شیر فشار شکن ساده مدل دوم\n(فشار ورودی 59psi, فشار خروجی 39psi, میزان افت فشار 20psi, نسبت کاهش فشار 33.90%)'}
                       </p>
                     </div>
                   ))}
@@ -219,7 +219,7 @@ const ExperimentalDesignPage = () => {
                       alt={`PRV-SM3 - تصویر ${imgIndex + 1}`}
                       width={400}
                       height={300}
-                      className={`w-full rounded-lg ${item.needsContain ? 'h-auto object-contain bg-gray-50' : 'h-48 object-cover'}`}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
                     />
                     <p className="text-sm text-purple-700 font-medium mt-2 text-center">
                       {imgIndex === 0 ? 'شماتیک طراحی شیر فشار شکن ساده مدل سوم' : 'مدل ساخته شده شیر فشار شکن ساده مدل سوم'}
@@ -261,7 +261,7 @@ const ExperimentalDesignPage = () => {
                         alt={`PRV-AM1 - تصویر ${item.index}`}
                         width={400}
                         height={300}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
                         {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن پیشرفته مدل اول' : 'مدل ساخته شده شیر فشار شکن پیشرفته مدل اول'}
@@ -271,25 +271,46 @@ const ExperimentalDesignPage = () => {
                 </div>
                 
                 {/* Other Images */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    { file: 'Screenshot 2025-09-15 at 22.36.55.png', index: 2, useContain: false },
-                    { file: 'Screenshot 2025-09-15 at 22.37.14.png', index: 4, useContain: true },
-                    { file: 'Screenshot 2025-09-15 at 22.37.35.png', index: 5, useContain: false }
-                  ].map((item) => (
-                    <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
-                      <Image
-                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/${item.file}`}
-                        alt={`PRV-AM1 - تصویر ${item.index}`}
-                        width={400}
-                        height={300}
-                        className={`w-full rounded-lg ${item.useContain ? 'h-auto object-contain bg-gray-50' : 'h-48 object-cover'}`}
-                      />
-                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        {item.index === 2 ? 'مکانیزم درپوشی' : item.index === 4 ? 'گیج فشار ورودی و خروجی شیر فشارشکن پیشرفته مدل اول' : 'نمونه ساخته شده پیستون پلیمری'}
-                      </p>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                    <Image
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.36.55.png`}
+                      alt="PRV-AM1 - تصویر 2"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                    />
+                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                      مکانیزم درپوشی
+                    </p>
+                  </div>
+                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                    <Image
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.37.35.png`}
+                      alt="PRV-AM1 - تصویر 5"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                    />
+                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                      نمونه ساخته شده پیستون پلیمری
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                    <Image
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.37.14.png`}
+                      alt="PRV-AM1 - تصویر 4"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                    />
+                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                      گیج فشار ورودی و خروجی شیر فشارشکن پیشرفته مدل اول (فشار ورودی 50psi, فشار خروجی 17psi, افت فشار 33psi, نسبت کاهش فشار 66%)
+                    </p>
+                  </div>
                 </div>
                 
                 {/* Vertical Image - Special Layout */}
@@ -330,7 +351,7 @@ const ExperimentalDesignPage = () => {
                         alt={`PRV-AM2 - تصویر ${item.index}`}
                         width={400}
                         height={300}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
                         {item.index === 1 ? 'شماتیک طراحی شیر فشار شکن پیشرفته مدل دوم' : 'مدل ساخته شده شیر فشارشکن پیشرفته مدل دوم'}
@@ -340,9 +361,26 @@ const ExperimentalDesignPage = () => {
                 </div>
                 
                 {/* Other Images */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                    <Image
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 2')}/Screenshot 2025-09-15 at 22.38.38.png`}
+                      alt="PRV-AM2 - تصویر 3"
+                      width={400}
+                      height={300}
+                      className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                    />
+                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                      گیج های فشار ورودی و خروجی شیر فشار شکن پیشرفته مدل دوم (فشار ورودی 41psi, فشار خروجی 15psi, افت فشار 26psi, نسبت کاهش فشار 63.41%)
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Large Images - Similar to Paired Images */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    { file: 'Screenshot 2025-09-15 at 22.38.38.png', index: 3 }
+                    { file: 'Screenshot 2025-09-21 at 09.02.14.png', index: 5 },
+                    { file: 'Screenshot 2025-09-21 at 09.14.54.png', index: 6 }
                   ].map((item) => (
                     <div key={item.index} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                       <Image
@@ -350,10 +388,10 @@ const ExperimentalDesignPage = () => {
                         alt={`PRV-AM2 - تصویر ${item.index}`}
                         width={400}
                         height={300}
-                        className="w-full h-48 object-cover rounded-lg"
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
                       />
                       <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                        گیج های فشار ورودی و خروجی شیر فشار شکن پیشرفته مدل دوم
+                        {item.index === 5 ? 'مسیر دینامیکی جریان آب' : 'شماتیک برش و هاشور خورده طرح شیر فشارشکن پیشرفته مدل دوم'}
                       </p>
                     </div>
                   ))}

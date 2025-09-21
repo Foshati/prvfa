@@ -331,118 +331,7 @@ const PRVAnalysisDashboard: React.FC = () => {
           </ResponsiveContainer>
         );
 
-      case "pressureBar":
-        return (
-          <ResponsiveContainer width="100%" height={500}>
-            <BarChart
-              data={pressureData}
-              margin={{ top: 40, right: 30, left: 20, bottom: 80 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis
-                dataKey="name"
-                tick={{ fontSize: 11, fill: "#333" }}
-                height={80}
-                interval={0}
-              />
-              <YAxis
-                label={{
-                  value: "حداکثر فشار (psi)",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: {
-                    textAnchor: "middle",
-                    fontSize: "12px",
-                    fill: "#333",
-                  },
-                }}
-                tick={{ fontSize: 12, fill: "#333" }}
-                domain={[0, 350]}
-              />
-              <Tooltip
-                formatter={(value: any) => [`${value} psi`, "حداکثر فشار"]}
-                labelFormatter={(label: any) => `${label}`}
-                contentStyle={{
-                  backgroundColor: "#ffffff",
-                  border: "1px solid #ccc",
-                  borderRadius: "8px",
-                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                  fontSize: "12px",
-                  direction: "rtl",
-                }}
-              />
-              <Bar
-                dataKey="pressure"
-                radius={[4, 4, 0, 0]}
-                stroke="#fff"
-                strokeWidth={1}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        );
 
-      case "comparison":
-        return (
-          <ResponsiveContainer width="100%" height={450}>
-            <ScatterChart margin={{ top: 40, right: 30, left: 40, bottom: 80 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis
-                dataKey="price"
-                type="number"
-                domain={["dataMin", "dataMax"]}
-                label={{
-                  value: "قیمت (دلار آمریکا)",
-                  position: "insideBottom",
-                  offset: -10,
-                  style: {
-                    textAnchor: "middle",
-                    fontSize: "12px",
-                    fill: "#333",
-                  },
-                }}
-                tick={{ fontSize: 12, fill: "#333" }}
-              />
-              <YAxis
-                dataKey="efficiency"
-                type="number"
-                label={{
-                  value: "راندمان (%)",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: {
-                    textAnchor: "middle",
-                    fontSize: "12px",
-                    fill: "#333",
-                  },
-                }}
-                tick={{ fontSize: 12, fill: "#333" }}
-                domain={[0, 80]}
-              />
-              <Tooltip
-                content={({ active, payload }: any) => {
-                  if (active && payload && payload.length) {
-                    const data = payload[0].payload;
-                    return (
-                      <div className="bg-white p-3 border rounded-lg shadow-lg" style={{ direction: 'rtl' }}>
-                        <p className="font-semibold text-gray-800 mb-1">
-                          {data.name}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          راندمان: {data.efficiency}%
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          قیمت: ${data.price}
-                        </p>
-                      </div>
-                    );
-                  }
-                  return null;
-                }}
-              />
-              <Scatter data={priceEfficiencyData} fill="#8B5FBF" />
-            </ScatterChart>
-          </ResponsiveContainer>
-        );
 
       default:
         return null;
@@ -535,9 +424,7 @@ const PRVAnalysisDashboard: React.FC = () => {
 
       {/* Chart controls */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">
-          نمودارهای مقایسه‌ای
-        </h2>
+     
 
         <div className="flex flex-wrap gap-4 mb-6">
           <button
@@ -560,26 +447,7 @@ const PRVAnalysisDashboard: React.FC = () => {
           >
             منحنی حداکثر فشار ورودی
           </button>
-          <button
-            onClick={() => setSelectedChart("pressureBar")}
-            className={`px-6 py-2 rounded-lg transition-colors ${
-              selectedChart === "pressureBar"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            مقایسه نواری فشار
-          </button>
-          <button
-            onClick={() => setSelectedChart("comparison")}
-            className={`px-6 py-2 rounded-lg transition-colors ${
-              selectedChart === "comparison"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
-          >
-            نمودار پراکنش قیمت-راندمان
-          </button>
+
         </div>
 
         <div className="w-full overflow-hidden bg-white p-4 rounded-lg">

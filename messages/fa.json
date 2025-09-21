@@ -19,6 +19,7 @@
     "supervisor": "استاد راهنما",
     "advisor": "استاد مشاور",
     "referee": "داور",
+    "graduateRepresentative": "نماینده تحصیلات تکمیلی",
     "thesisAuthor": "نگارنده پایان نامه\n(طراح و سازنده شیر فشارشکن)",
     "researcher": "محقق",
     "labAssistant": "دستیار آزمایشگاه",
@@ -28,9 +29,10 @@
       "baghlani": "دکتر عبدالحسین بغلانی",
       "daneshvar": "دکتر فرنوش آقایی دانشور",
       "hekmatzadeh": "دکتر علی اکبر حکمت زاده",
+      "hadian": "دکتر محمد علی هادیان فرد",
       "amirrezaFoshati": "مهندس امیررضا فصحتی",
       "amirhosseinFoshati": "مهندس امیرحسین فصحتی",
-      "aliSehat": "مهندس علی صحت",
+      "aliSehat": "مهندس منصور صحت",
       "mehdiAhmadi": "مهندس مهدی احمدی"
     }
   },

@@ -22,7 +22,7 @@ const PressureValveTypes = () => {
           name: "شیرهای فشارشکن مستقیم نوع دیافراگمی",
           englishName: "Direct Acting Diaphragm Type",
           description: "با استفاده از دیافراگم انعطاف‌پذیر جریان را کنترل می‌کند",
-          features: ["طراحی ساده", "هزینه کمتر", "نگهداری آسان", "مناسب آبیاری"],
+          features: ["طراحی ساده", "هزینه کمتر", "نگهداری آسان", "مناسب آبیاری و کشاورزی"],
           imageCount: 2
         }
       ]
@@ -157,7 +157,6 @@ const PressureValveTypes = () => {
 
                     {/* Images */}
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-gray-800">تصاویر:</h4>
                       <div className="grid grid-cols-1 gap-6">
                         {[...Array(subType.imageCount)].map((_, imgIndex) => {
                           const imagePath = getImagePath(subType.englishName, imgIndex + 1);
@@ -171,7 +170,15 @@ const PressureValveTypes = () => {
                                 className="w-full h-64 object-contain rounded-lg bg-gray-50"
                               />
                               <p className="text-sm text-gray-600 mt-2 text-center font-medium">
-                                {subType.name} - تصویر {imgIndex + 1}
+                                {subType.englishName === 'Direct Acting Piston Type' && imgIndex === 0 ? 'طرح شماتیک شیرهای فشار شکن مستقیم نوع پیستونی' :
+                                 subType.englishName === 'Direct Acting Piston Type' && imgIndex === 1 ? 'طرح واقعی شیرهای فشار شکن مستقیم نوع پیستونی' :
+                                 subType.englishName === 'Direct Acting Diaphragm Type' && imgIndex === 0 ? 'طرح شماتیک شیرهای فشار شکن مستقیم نوع دیافراگمی' :
+                                 subType.englishName === 'Direct Acting Diaphragm Type' && imgIndex === 1 ? 'طرح واقعی شیرهای فشار شکن مستقیم نوع دیافراگمی' :
+                                 subType.englishName === 'Internal Pilot Operated' && imgIndex === 0 ? 'طرح شماتیک شیرهای فشار شکن پایلوت دیافراگم داخلی' :
+                                 subType.englishName === 'Internal Pilot Operated' && imgIndex === 1 ? 'طرح واقعی شیرهای فشار شکن پایلوت دیافراگم داخلی' :
+                                 subType.englishName === 'External Pilot Operated' && imgIndex === 0 ? 'طرح شماتیک شیرهای فشار شکن با پایلوت خارجی' :
+                                 subType.englishName === 'External Pilot Operated' && imgIndex === 1 ? 'طرح واقعی شیرهای فشار شکن با پایلوت خارجی' :
+                                 `${subType.name} - تصویر ${imgIndex + 1}`}
                               </p>
                             </div>
                           ) : (
