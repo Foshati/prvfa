@@ -52,19 +52,30 @@ const ExperimentalDesignPage = () => {
             ))}
           </div>
           
-          {/* Summary Results Image */}
+          {/* Summary Results Images */}
           <div className="mt-8">
-            <h3 className="text-xl font-semibold text-slate-700 mb-4 text-center">خلاصه نتایج آزمایشات</h3>
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <Image
-                src="/img/methodology/fix/res.png"
-                alt="خلاصه نتایج آزمایشات"
-                width={1000}
-                height={700}
-                className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
-                priority
-              />
-              <p className="text-sm text-gray-600 mt-3 text-center font-medium">خلاصه نتایج آزمایشات انجام شده بر روی مدل‌های مختلف شیر فشارشکن</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <Image
+                  src="/img/methodology/fix/res.png"
+                  alt="خلاصه نتایج آزمایشات"
+                  width={1000}
+                  height={700}
+                  className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
+                  priority
+                />
+                <p className="text-sm text-gray-600 mt-3 text-center font-medium">نتایج بدست آمده از محل آزمایش پلی اتیلن</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <Image
+                  src="/img/m1.png"
+                  alt="تصویر تکمیلی نتایج"
+                  width={1000}
+                  height={700}
+                  className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +94,7 @@ const ExperimentalDesignPage = () => {
             { name: 'دوم', folder: 'مدل ازمایش دوم', images: ['test2.png', 'Screenshot 2025-09-15 at 22.30.38.png'], zoomLess: [false, true] },
             { name: 'سوم', folder: 'مدل ازمایشی سوم', images: ['Screenshot 2025-09-15 at 22.31.08.png', 'روپیچ-توپیچ-گالوانیزه-2.jpg'], zoomLess: [true, true] },
             { name: 'چهارم', folder: 'مدل ازمایشی چهارم', images: ['Screenshot 2025-09-15 at 22.31.31.png', 'Screenshot 2025-09-15 at 22.31.39.png'], zoomLess: [false, true] },
-            { name: 'پنجم', folder: 'مدل ازمایشی پنجم', images: ['Screenshot 2025-09-15 at 22.33.07.png'], zoomLess: [false] }
+            { name: 'پنجم', folder: 'مدل ازمایشی پنجم', images: ['Screenshot 2025-09-15 at 22.33.07.png', 'photo20963356551.jpg'], zoomLess: [false, false] }
           ].map((model, modelIndex) => (
             <div key={modelIndex} className="mb-8 last:mb-0">
               <h3 className="text-xl font-semibold text-slate-700 mb-6 bg-green-50 p-3 rounded-lg border-r-4 border-green-500">
@@ -110,6 +121,7 @@ const ExperimentalDesignPage = () => {
                        model.name === 'چهارم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی چهارم' :
                        model.name === 'چهارم' && imgIndex === 1 ? 'انتخاب درپوش پایه بلند پلاستیکی به عنوان مسدود کننده در مدل آزمایشی چهارم' :
                        model.name === 'پنجم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی پنجم' :
+                       model.name === 'پنجم' && imgIndex === 1 ? 'آب بندی تیوب با استفاده از بست گازی' :
                        `مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                     </p>
                   </div>
@@ -200,6 +212,41 @@ const ExperimentalDesignPage = () => {
                     </p>
                   </div>
                 </div>
+                
+                {/* Videos Section */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-purple-700 text-center">فیلم های آزمایش</h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/first-test-prv-sm2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-purple-700 font-medium mt-2 text-center">
+                        فیلم ازمایش اولیه گیج های فشار بدون فشارشکن
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/test-prv-sm2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-purple-700 font-medium mt-2 text-center">
+                        فیلم ازمایش شیر فشارشکن ساده مدل دوم
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -213,7 +260,9 @@ const ExperimentalDesignPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { file: 'Screenshot 2025-09-15 at 22.35.40.png', needsContain: true },
-                  { file: 'Screenshot 2025-09-15 at 22.35.52.png', needsContain: true }
+                  { file: 'Screenshot 2025-09-15 at 22.35.52.png', needsContain: true },
+                  { file: 'photo20963356353.jpg', needsContain: true },
+                  { file: 'photo20963356895.jpg', needsContain: true }
                 ].map((item, imgIndex) => (
                   <div key={imgIndex} className="bg-white border border-purple-200 rounded-lg p-4 shadow-sm">
                     <Image
@@ -223,9 +272,11 @@ const ExperimentalDesignPage = () => {
                       height={300}
                       className="w-full h-48 object-contain rounded-lg bg-gray-50"
                     />
-                    <p className="text-sm text-purple-700 font-medium mt-2 text-center">
-                      {imgIndex === 0 ? 'شماتیک طراحی شیر فشار شکن ساده مدل سوم' : 'مدل ساخته شده شیر فشار شکن ساده مدل سوم'}
-                    </p>
+                    {imgIndex < 2 && (
+                      <p className="text-sm text-purple-700 font-medium mt-2 text-center">
+                        {imgIndex === 0 ? 'شماتیک طراحی شیر فشار شکن ساده مدل سوم' : 'مدل ساخته شده شیر فشار شکن ساده مدل سوم'}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -272,20 +323,30 @@ const ExperimentalDesignPage = () => {
                   ))}
                 </div>
                 
-                {/* Other Images */}
+                {/* Mechanism Images */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[
+                    { file: 'photo20963356226.jpg', caption: 'مکانیزم درپوشی در مرحله اولیه ساخت' },
+                    { file: 'photo20963356874.jpg', caption: 'مرحله ساخت مکانیزم درپوشی و وصل شدن به بدنه upvc' },
+                    { file: 'Screenshot 2025-09-15 at 22.36.55.png', caption: 'مکانیزم درپوشی با روکش تیوب' }
+                  ].map((item, imgIndex) => (
+                    <div key={imgIndex} className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <Image
+                        src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/${item.file}`}
+                        alt={`PRV-AM1 - تصویر ${imgIndex + 2}`}
+                        width={400}
+                        height={300}
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                      />
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        {item.caption}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Polymer Components Images */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
-                    <Image
-                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.36.55.png`}
-                      alt="PRV-AM1 - تصویر 2"
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
-                    />
-                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
-                      مکانیزم درپوشی
-                    </p>
-                  </div>
                   <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
                     <Image
                       src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/Screenshot 2025-09-15 at 22.37.35.png`}
@@ -296,6 +357,18 @@ const ExperimentalDesignPage = () => {
                     />
                     <p className="text-sm text-orange-700 font-medium mt-2 text-center">
                       نمونه ساخته شده پیستون پلیمری
+                    </p>
+                  </div>
+                  <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                    <Image
+                      src={`/img/methodology/${encodeURIComponent('شیر فشارشکن پیشرفته مدل 1')}/photo20963355774.jpg`}
+                      alt="PRV-AM1 - تصویر 6"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                    />
+                    <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                      نشیمنگاه با مسدود کننده پلیمری
                     </p>
                   </div>
                 </div>
@@ -328,6 +401,55 @@ const ExperimentalDesignPage = () => {
                     <p className="text-sm text-orange-700 font-medium mt-2 text-center">
                       آزمایش شیر فشار شکن پیشرفته مدل اول
                     </p>
+                  </div>
+                </div>
+                
+                {/* Videos Section */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-orange-700 text-center">فیلم‌های آزمایش</h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/img/methodology/شیر فشارشکن پیشرفته مدل 1/test-mekanism.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        ازمایش مکانیزم درپوشی با پیچ تنظیم
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/first-test-prv-am1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        فیلم ازمایش اولیه گیج های فشار بدون فشارشکن
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/test-prv-am1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        فیلم ازمایش شیر های فشارشکن پیشرفته مدل اول
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -412,6 +534,41 @@ const ExperimentalDesignPage = () => {
                     <p className="text-sm text-orange-700 font-medium mt-2 text-center">
                       محل آزمایش شیر فشارشکن پیشرفته مدل دوم
                     </p>
+                  </div>
+                </div>
+                
+                {/* Videos Section */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-orange-700 text-center">فیلم های آزمایش</h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/first-test-prv-am2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        شیر فشارشکن پیشرفته مدل فیلم ازمایش اولیه گیج های فشار بدون فشارشکن
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+                      <video
+                        controls
+                        className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                        preload="metadata"
+                      >
+                        <source src="/video/ازمایش/test-prv-am2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      <p className="text-sm text-orange-700 font-medium mt-2 text-center">
+                        فیلم ازمایش شیر های فشارشکن پیشرفته مدل دوم
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

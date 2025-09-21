@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   BarChart,
   Bar,
@@ -45,7 +46,7 @@ const PRVAnalysisDashboard: React.FC = () => {
   const prvData: PRVData[] = [
     {
       id: 1,
-      model: "PRV-SM2",
+      model: "شیر فشارشکن ساده مدل 2 (PRV-SM2)",
       mechanism: "مستقیم ساده",
       material: "UPVC/PVC",
       maxPressure: 116,
@@ -53,8 +54,8 @@ const PRVAnalysisDashboard: React.FC = () => {
       maxPressureRange: "72-116 / 5-8",
       outputPressure: "پیش تنظیم",
       efficiencyMin: 35,
-      efficiencyMax: 70,
-      efficiency: 52.5,
+      efficiencyMax: 20,
+      efficiency: 22.5,
       stabilityText: "پایداری کم و متغیر",
       priceMin: 5,
       priceMax: 10,
@@ -64,7 +65,7 @@ const PRVAnalysisDashboard: React.FC = () => {
     },
     {
       id: 2,
-      model: "PRV-AM2",
+      model: "شیر فشارشکن پیشرفته مدل 2 (PRV-AM2)",
       mechanism: "مستقیم در پوشی",
       material: "UPVC/PVC",
       maxPressure: 116,
@@ -83,8 +84,8 @@ const PRVAnalysisDashboard: React.FC = () => {
     },
     {
       id: 3,
-      model: "PRV-AM2+",
-      mechanism: "مستقیم در پوشی بهبود یافته",
+      model: "شیر فشارشکن پیشرفته مدل 2 بهبود یافته (+PRV-AM2)",
+      mechanism: "مستقیم در پوشی  ",
       material: "UPVC فشار قوی",
       maxPressure: 232,
       maxPressureBar: 16,
@@ -103,7 +104,7 @@ const PRVAnalysisDashboard: React.FC = () => {
     {
       id: 4,
       model: "Watts LF25AUB-Z3",
-      mechanism: "دیافراگم مستقیم",
+      mechanism: "مستقیم دیافراگمی",
       material: "آلیاژ مس سیلیکون بدون سرب",
       maxPressure: 300,
       maxPressureBar: 20.7,
@@ -122,7 +123,7 @@ const PRVAnalysisDashboard: React.FC = () => {
     {
       id: 5,
       model: "Apollo 3610401 – 35 Series",
-      mechanism: "پیستون مستقیم",
+      mechanism: "مستقیم پیستونی",
       material: "برنز (Bronze)",
       maxPressure: 300,
       maxPressureBar: 20.7,
@@ -141,7 +142,7 @@ const PRVAnalysisDashboard: React.FC = () => {
     {
       id: 6,
       model: "GF Type 582 - 1″ PVCsocket (EPDM)",
-      mechanism: "دیافراگم مستقیم",
+      mechanism: "مستقیم دیافراگمی",
       material: "PVC-U+ EPDM",
       maxPressure: 218,
       maxPressureBar: 15,
@@ -161,7 +162,7 @@ const PRVAnalysisDashboard: React.FC = () => {
       id: 7,
       model: "NeoFlow PRV (GF)",
       mechanism: "پایلوت در خارجی",
-      material: "POM-C مترءیال پلیمری GF",
+      material: "POM-C متریال پلیمری GF",
       maxPressure: 232,
       maxPressureBar: 16,
       maxPressureRange: "232 / 16",
@@ -180,7 +181,7 @@ const PRVAnalysisDashboard: React.FC = () => {
 
   const getShortName = (fullName: string): string => {
     if (fullName.includes("PRV-SM2")) return "PRV-SM2";
-    if (fullName.includes("PRV-AM2+")) return "PRV-AM2+";
+    if (fullName.includes("+PRV-AM2")) return "+PRV-AM2";
     if (fullName.includes("PRV-AM2")) return "PRV-AM2";
     if (fullName.includes("Watts")) return "Watts LF25AUB";
     if (fullName.includes("Apollo")) return "Apollo 35 Series";
@@ -340,8 +341,8 @@ const PRVAnalysisDashboard: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen font-sans" style={{ direction: 'rtl' }}>
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        تحلیل و مقایسه شیرهای کاهنده فشار
+      <h1 className="text-2xl font-bold text-center mb-8 text-gray-800">
+        تحلیل و مقایسه شیرهای فشارشکن منتخب با شیرهای فشارشکن موجود
       </h1>
 
       {/* Main table */}
@@ -422,10 +423,9 @@ const PRVAnalysisDashboard: React.FC = () => {
         </div>
       </div>
 
+ 
       {/* Chart controls */}
       <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-     
-
         <div className="flex flex-wrap gap-4 mb-6">
           <button
             onClick={() => setSelectedChart("efficiency")}
@@ -447,7 +447,6 @@ const PRVAnalysisDashboard: React.FC = () => {
           >
             منحنی حداکثر فشار ورودی
           </button>
-
         </div>
 
         <div className="w-full overflow-hidden bg-white p-4 rounded-lg">

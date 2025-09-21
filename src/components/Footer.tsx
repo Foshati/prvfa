@@ -63,8 +63,8 @@ export const Footer = () => {
           </Link>
 
           {/* Hide the fourth link on mobile */}
-          <Link href='https://www.npmjs.com/package/neex' className='hidden lg:inline hover:text-yellow-600'>
-            Neex
+          <Link href='https://foshati.com' className='hidden lg:inline hover:text-yellow-600'>
+            Foshati
           </Link>
         </div>
       </div>

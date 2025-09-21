@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { Chart, registerables, ChartConfiguration } from "chart.js";
+import Image from "next/image";
 
 // Register Chart.js components
 Chart.register(...registerables);
@@ -271,7 +272,7 @@ const ValveAnalysis: React.FC = () => {
     return data.map((item, index) => (
       <tr
         key={`${valveType}-${index}`}
-        className={`${borderColor} bg-white hover:bg-blue-50 hover:scale-[1.01] transition-all duration-200 hover:shadow-md even:bg-gray-50`}
+        className={`${borderColor} bg-white hover:bg-blue-50 hover:scale-[1.01] transition-all duration-200 hover:shadow-md even:bg-gray-50 text-black`}
       >
         {index === 0 && (
           <td
@@ -305,11 +306,11 @@ const ValveAnalysis: React.FC = () => {
   return (
     <div
       dir="rtl"
-      className="font-['B-NAZANIN','Tahoma',Arial,sans-serif] font-sans m-5 bg-gray-100 min-h-screen"
+      className=" font-sans m-5 bg-gray-100 min-h-screen text-black"
     >
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h1 className="text-center text-slate-700 mb-8 border-b-4 border-blue-500 pb-3 text-2xl font-bold">
-          تحلیل عملکرد شیرهای فشارشکن پلیمری
+        مقایسه عملکرد شیرهای فشارشکن پلیمری منتخب
         </h1>
 
         <h2 className="text-slate-600 my-6 border-r-4 border-blue-500 pr-3 text-xl">
@@ -424,36 +425,23 @@ const ValveAnalysis: React.FC = () => {
 
         <div className="bg-gray-100 p-5 my-5 rounded-lg border-r-4 border-red-500">
           <h2 className="text-slate-600 mb-4 text-xl">
-            نمونه محاسبه - آزمایش اول شیر فشارشکن پیشرفته
+           نمونه محاسبه -  آزمایش شیر فشارشکن  پیشرفته مدل دوم
           </h2>
-          <p className="font-bold mb-2">داده‌های ورودی:</p>
           <ul className="list-disc mr-5 mb-4">
-            <li>فشار ورودی: 49 psi</li>
-            <li>فشار خروجی: 16 psi</li>
+            <li>فشار ورودی: 41psi </li>
+            <li>فشار خروجی: 15psi </li>
           </ul>
 
           <p className="font-bold mb-2">محاسبات:</p>
 
-          <p className="mb-2">1. افت فشار:</p>
-          <div className="bg-white p-4 my-2 rounded border border-gray-300 font-mono text-center">
-            Pressure Drop = P_in - P_out = 49 - 16 = 33 psi
-          </div>
-
-          <p className="mb-2">2. نسبت کاهش فشار (راندمان کنترل فشار):</p>
-          <div className="bg-white p-4 my-2 rounded border border-gray-300 font-mono text-center">
-            Efficiency = ((P_in - P_out) / P_in) × 100 = ((49 - 16) / 49) × 100
-            = 67.35%
-          </div>
-
-          <p className="mb-2">
-            3. انحراف معیار فشار خروجی (برای کل آزمایش‌های شیر پیشرفته):
-          </p>
-          <div className="bg-white p-4 my-2 rounded border border-gray-300 font-mono text-center">
-            P̄ = (16 + 15 + 15 + 15) / 4 = 15.25 psi
-            <br />σ = √[(1/4) × ((16-15.25)² + (15-15.25)² + (15-15.25)² +
-            (15-15.25)²)] = √[(1/4) × (0.5625 + 0.0625 + 0.0625 + 0.0625)] =
-            0.43 psi
-          </div>
+            <Image 
+                    src="/img/m2.png" 
+                    alt="نمونه محاسبه شیر فشارشکن" 
+                    width={800}
+                    height={600}
+                    className="mx-auto rounded-lg shadow-md"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
         </div>
       </div>
     </div>

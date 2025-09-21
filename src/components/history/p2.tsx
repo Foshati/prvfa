@@ -158,7 +158,7 @@ const ResearchTable = () => {
             <div className="w-6 h-6 bg-purple-500 rounded"></div>
             <div className="text-right">
               <div className="font-semibold text-slate-800 text-sm">پیشینه کلی</div>
-              <div className="text-xs text-gray-600">(ردیف 1-3)</div>
+              <div className="text-xs text-gray-600">(ردیف 1-2)</div>
             </div>
           </div>
           
@@ -166,7 +166,7 @@ const ResearchTable = () => {
             <div className="w-6 h-6 bg-green-500 rounded"></div>
             <div className="text-right">
               <div className="font-semibold text-slate-800 text-sm">مستقیم پیستونی</div>
-              <div className="text-xs text-gray-600">(ردیف 4-6)</div>
+              <div className="text-xs text-gray-600">(ردیف 3-5)</div>
             </div>
           </div>
           
@@ -174,7 +174,7 @@ const ResearchTable = () => {
             <div className="w-6 h-6 bg-blue-500 rounded"></div>
             <div className="text-right">
               <div className="font-semibold text-slate-800 text-sm">مستقیم دیافراگمی</div>
-              <div className="text-xs text-gray-600">(ردیف 7-9)</div>
+              <div className="text-xs text-gray-600">(ردیف 6-7)</div>
             </div>
           </div>
           
@@ -182,7 +182,7 @@ const ResearchTable = () => {
             <div className="w-6 h-6 bg-orange-500 rounded"></div>
             <div className="text-right">
               <div className="font-semibold text-slate-800 text-sm">پایلوت‌دار داخلی</div>
-              <div className="text-xs text-gray-600">(ردیف 10-12)</div>
+              <div className="text-xs text-gray-600">(ردیف 8-9)</div>
             </div>
           </div>
           
@@ -190,7 +190,7 @@ const ResearchTable = () => {
             <div className="w-6 h-6 bg-red-500 rounded"></div>
             <div className="text-right">
               <div className="font-semibold text-slate-800 text-sm">پایلوت‌دار خارجی</div>
-              <div className="text-xs text-gray-600">(ردیف 13-15)</div>
+              <div className="text-xs text-gray-600">(ردیف 10)</div>
             </div>
           </div>
         </div>

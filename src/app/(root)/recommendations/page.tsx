@@ -3,46 +3,38 @@ import { CheckCircle, Target, Wrench, Lightbulb } from 'lucide-react';
 
 export default function PRVSummary() {
   const results = [
-    { title: "مدل‌های منتخب", desc: "PRV-SM2 (ساده، 31.58% کاهش فشار) و PRV-AM2 (پیشرفته، 66.20% کاهش فشار)" },
+    { title: "مدل‌های منتخب ", desc: "PRV-SM2 (ساده، 31.58% کاهش فشار) و PRV-AM2 (پیشرفته، 66.20% کاهش فشار)" },
     { title: "مکانیزم مستقیم درپوشی", desc: "مکانیزم مهندسی سبک و مقرون‌به‌صرفه که مشکلات مکانیزم‌های پیستونی و دیافراگمی را ندارد و عملکرد پایدار و دقیق ارائه می‌دهد" },
-    { title: "مواد موفق", desc: "PVC و UPVC با مقاومت بالا در برابر خوردگی و وزن سبک" },
+    { title: "جنس بدنه و  اتصالات داخلی", desc: "PVC,UPVC برای اتصالات بدنه شیر فشار شکن و PPR برای اتصالات داخلی شیر فشار شکن استفاده شد." },
     { title: "چسب‌های فشارقوی", desc: "تارگت، پاتکس و REINZOSIL با کارایی عالی در آب‌بندی" },
     { title: "تیوب‌های لاستیکی", desc: "کاهش شوک هیدرولیکی و ضربه قوچ" },
-    { title: "اتصالات رزوه‌ای", desc: "افزایش مقاومت در برابر فشارهای بالا" },
-    { title: "طراحی چندمرحله‌ای", desc: "پایداری بالا و کاهش کاویتاسیون" },
+    { title: "اتصالات رزوه‌ای", desc: "افزایش مقاومت اتصالات داخلی در برابر فشارهای بالا" },
+    { title: "طراحی چندمرحله‌ای", desc: " باعث کاهش فشار در چندین مرحله به صورت پله ای می شود که منجر به کاهش کاویتاسیون می شود" },
     { title: "فیلتر ورودی", desc: "افزایش طول عمر و جلوگیری از انسداد" },
-    { title: "اورینگ الاستومری", desc: "آب‌بندی کامل تا فشار ۶ بار" }
+    { title: "مسدود کننده و نشیمنگاه پلیمری ", desc: "  با استفاده از درپوش پایه بلند پلاستیکی و اورینگ و تبدیل ۶۳ به ۳۲ هم مرکز پلیکا به خوبی عملکرد نشیمنگاه و مسدود کننده ایجاد شد. " }
   ];
 
   const suggestions = [
-    { title: "آزمایش فشار بالا", desc: "تست در فشار ۸-۱۰ بار برای کاربردهای صنعتی" },
-    { title: "ابزار دقیق", desc: "استفاده از فلومتر و ترانسمیتر برای اندازه‌گیری دقیق" },
+    { title: "آزمایش در فشار های بالاتر", desc: "تست در فشار ۸-۱۰ بار برای گسترش کاربردها" },
+    { title: "  استفاده از ابزار دقیق", desc: "استفاده از فلومتر و ترانسمیتر برای اندازه‌گیری دقیق دبی و فشار لحظه ای" },
     { title: "اتصالات قوی‌تر", desc: "UPVC استخری + چسب سه‌مرحله‌ای برای فشار ۱۶-۲۵ بار" },
     { title: "سیستم هوشمند", desc: "ادغام IoT و الگوریتم‌های هوشمند برای کنترل خودکار" },
     { title: "آزمایش محیطی", desc: "تست در دماهای -۱۰ تا +۵۰ درجه سانتی‌گراد" },
     { title: "طراحی ماژولار", desc: "امکان تعویض سریع قطعات برای تعمیر آسان" },
     { title: "آموزش کاربران", desc: "برنامه‌های آموزشی برای نصب و نگهداری صحیح" },
-    { title: "استانداردسازی", desc: "تولید در سایزهای مختلف طبق استانداردهای ISO و ISIRI" }
+    { title: "استانداردسازی", desc: "تولید در سایزهای مختلف و استانداردهای ISO و ISIRI" }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            تحقیق شیر فشارشکن پلیمری
-          </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            طراحی، ساخت و آزمایش شیر فشارشکن پلیمری برای کنترل فشار در شبکه‌های آبرسانی
-          </p>
-        </div>
+  
 
         {/* Main Results */}
         <div className="mb-12">
           <div className="flex items-center mb-6">
             <Target className="text-green-600 ml-3" size={28} />
-            <h2 className="text-2xl font-bold text-gray-800">نتایج کلیدی تحقیق</h2>
+            <h2 className="text-2xl font-bold text-gray-800">نتایج کلیدی و جمع بندی</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {results.map((result, index) => (
@@ -59,36 +51,12 @@ export default function PRVSummary() {
           </div>
         </div>
 
-        {/* Key Performance Stats */}
-        <div className="mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">عملکرد مدل‌های منتخب</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-center">
-                <div className="bg-blue-100 rounded-lg p-6">
-                  <h4 className="font-bold text-blue-800 mb-2">PRV-SM2 (ساده)</h4>
-                  <div className="text-2xl font-bold text-blue-600 mb-1">31.58%</div>
-                  <p className="text-sm text-gray-600">کاهش فشار</p>
-                  <p className="text-xs text-gray-500 mt-2">انحراف معیار: ۳٫۶۳ psi</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="bg-green-100 rounded-lg p-6">
-                  <h4 className="font-bold text-green-800 mb-2">PRV-AM2 (پیشرفته)</h4>
-                  <div className="text-2xl font-bold text-green-600 mb-1">66.20%</div>
-                  <p className="text-sm text-gray-600">کاهش فشار</p>
-                  <p className="text-xs text-gray-500 mt-2">انحراف معیار:  ۰٫۵ psi</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+     
         {/* Suggestions */}
         <div>
           <div className="flex items-center mb-6">
             <Lightbulb className="text-orange-600 ml-3" size={28} />
-            <h2 className="text-2xl font-bold text-gray-800">پیشنهادهای بهبود</h2>
+            <h2 className="text-2xl font-bold text-gray-800">پیشنهادها</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {suggestions.map((suggestion, index) => (
