@@ -17,11 +17,7 @@ const professors = [
         roleKey: 'advisor',
         avatar: '/img/team-Professors/dr-daneshvar.jpg',
     },
-    {
-        nameKey: 'hadian',
-        roleKey: 'graduateRepresentative',
-        avatar: '/img/team-Professors/dr-hadian.jpg',
-    }
+
 
 ]
 

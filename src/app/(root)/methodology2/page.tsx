@@ -31,26 +31,53 @@ const ExperimentalDesignPage = () => {
             ))}
           </div>
           
-          {/* Remaining 3 Images - Larger */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Remaining 4 Images - Smaller */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {[
               'Screenshot 2025-09-15 at 22.28.26.png',
               'Screenshot 2025-09-15 at 22.28.36.png',
-              'Screenshot 2025-09-15 at 22.28.49.png'
+              'Screenshot 2025-09-15 at 22.28.49.png',
+              'Screenshot 2025-09-15 at 22.29.03.png'
             ].map((filename, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-3 shadow-sm">
                 <Image
                   src={`/img/methodology/${encodeURIComponent('طراحی و روش آزمایش شیر فشارشکن')}/${filename}`}
                   alt={`تصویر طراحی ${index + 3}`}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-contain rounded-lg bg-gray-50"
+                  width={300}
+                  height={200}
+                  className="w-full h-32 object-contain rounded-lg bg-gray-50"
                 />
-                <p className="text-sm text-gray-600 mt-2 text-center">{index === 0 ? 'محل آزمایش پلی اتیلن' : index === 1 ? 'محل آزمایش پلی اتیلن با شیر' : 'مراحل اتصال پلی اتیلن'}</p>
+                <p className="text-xs text-gray-600 mt-1 text-center">{index === 0 ? 'محل آزمایش پلی اتیلن' : index === 1 ? 'محل آزمایش پلی اتیلن با شیر' : index === 2 ? 'مراحل اتصال پلی اتیلن' : 'ابزار محاسبه دبی محل ازمایش'}</p>
               </div>
             ))}
           </div>
-
+          
+          {/* Summary Results Images */}
+          <div className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <Image
+                  src="/img/methodology/fix/res.png"
+                  alt="خلاصه نتایج آزمایشات"
+                  width={1000}
+                  height={700}
+                  className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
+                  priority
+                />
+                <p className="text-sm text-gray-600 mt-3 text-center font-medium">نتایج بدست آمده از محل آزمایش پلی اتیلن</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                <Image
+                  src="/img/m1.png"
+                  alt="تصویر تکمیلی نتایج"
+                  width={1000}
+                  height={700}
+                  className="w-full h-auto object-contain rounded-lg bg-gray-50 mx-auto"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -94,7 +121,7 @@ const ExperimentalDesignPage = () => {
                        model.name === 'چهارم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی چهارم' :
                        model.name === 'چهارم' && imgIndex === 1 ? 'انتخاب درپوش پایه بلند پلاستیکی به عنوان مسدود کننده در مدل آزمایشی چهارم' :
                        model.name === 'پنجم' && imgIndex === 0 ? 'مدل ساخته شده آزمایشی پنجم' :
-                       model.name === 'پنجم' && imgIndex === 1 ? 'ساخت آب بندی تیوب با استفاده از بست گازی که در مدل پیشرفته مورد استفاده قرار گرفت' :
+                       model.name === 'پنجم' && imgIndex === 1 ? 'آب بندی تیوب با استفاده از بست گازی' :
                        `مدل آزمایشی ${model.name} - تصویر ${imgIndex + 1}`}
                     </p>
                   </div>

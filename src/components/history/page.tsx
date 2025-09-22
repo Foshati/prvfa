@@ -78,7 +78,7 @@ export default function HistoryPage() {
             />
           </div>
           <div className="p-4 text-center">
-            <p className="text-sm font-medium text-gray-700">شیر فشار شکن مدل PRV-Cla-Val 390-02 & 3690-02</p>
+            <p className="text-sm font-medium text-gray-700">شیر فشار شکن مدل PRV-Cla-Val 390-02 & 3690-02 با قابلیت اتصال به سیستم های scada</p>
           </div>
         </div>
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
