@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import dataset from '@/data/dataset.json';
+
+// Edge Runtime برای Cloudflare Pages
+export const runtime = 'edge';
 
 // Liara AI API Configuration
 const LIARA_API_URL = 'https://ai.liara.ir/api/v1/6868084b50c818d74534414e/chat/completions';
-const LIARA_API_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2ODU0M2NmMjVkNjUyYzgwNzZjNmJlZTMiLCJ0eXBlIjoiYXV0aCIsImlhdCI6MTc1Nzk3MDExN30.NJa5c0c1P7eOmPj0uDkhOwpEifYm9Kw-1JPh47XMNSQ';
 
 interface DatasetQuestion {
   question: string;
@@ -15,17 +16,10 @@ interface Dataset {
   questions: DatasetQuestion[];
 }
 
-// Load dataset
-function loadDataset() {
-  try {
-    const datasetPath = path.join(process.cwd(), 'public', 'data', 'dataset-1.json');
-    const data = fs.readFileSync(datasetPath, 'utf8');
-    const dataset: Dataset = JSON.parse(data);
-    return dataset.questions.map((q: DatasetQuestion) => `Q: ${q.question}\nA: ${q.answer}`).join('\n\n');
-  } catch (error) {
-    console.error('Error loading dataset:', error);
-    return '';
-  }
+// دریافت knowledge از dataset
+function getDatasetKnowledge(): string {
+  const data = dataset as Dataset;
+  return data.questions.map((q: DatasetQuestion) => `Q: ${q.question}\nA: ${q.answer}`).join('\n\n');
 }
 
 interface Message {
@@ -69,8 +63,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Get API token from environment variable or fallback
+    const apiToken = process.env.LIARA_API_TOKEN || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2ODU0M2NmMjVkNjUyYzgwNzZjNmJlZTMiLCJ0eXBlIjoiYXV0aCIsImlhdCI6MTc1Nzk3MDExN30.NJa5c0c1P7eOmPj0uDkhOwpEifYm9Kw-1JPh47XMNSQ';
+
     // Load dataset knowledge
-    const datasetKnowledge = loadDataset();
+    const datasetKnowledge = getDatasetKnowledge();
     
     // Prepare request for Liara API
     const liaraRequest = {
@@ -90,14 +87,12 @@ Use this information to answer questions about the thesis, pressure reducing val
       stream: false,
     };
 
-    console.log('Sending request to Liara API:', liaraRequest);
-
     // Call Liara API
     const response = await fetch(LIARA_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${LIARA_API_TOKEN}`,
+        'Authorization': `Bearer ${apiToken}`,
       },
       body: JSON.stringify(liaraRequest),
     });
@@ -116,7 +111,6 @@ Use this information to answer questions about the thesis, pressure reducing val
     }
 
     const data: LiaraApiResponse = await response.json();
-    console.log('Liara API Response:', data);
 
     // Validate response
     if (!data.choices || data.choices.length === 0) {
